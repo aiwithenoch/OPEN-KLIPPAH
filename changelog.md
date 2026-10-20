@@ -104,3 +104,10 @@
 - Link audit: no tracked source or documentation outside the preserved changelog/license contains the unconfigured branded web/API/MCP domains, App Store/Product Hunt destinations, or old branded support/privacy email addresses. Repository-relative documentation paths and required local defaults were checked for existence.
 - Build note: Next.js emitted the existing Better Auth warnings about absent `BETTER_AUTH_URL` and `BETTER_AUTH_SECRET` in the test environment; the production build still completed successfully.
 - Current state: the cleanup is ready to commit and push. No public deployment was changed; operators must set real deployment URLs explicitly when they have them.
+
+## 2026-10-20T21:22:34+00:00 — Published dead-link cleanup
+
+- Objective: publish the verified destination cleanup to the requested Open Klippah repository.
+- Commands: committed as `89e2469` with `git commit -m "Remove unverified branded destinations"`; pushed with `GIT_TERMINAL_PROMPT=0 git push`.
+- Result: `origin/main` and local `HEAD` both resolve to `89e2469d9a6aac661327959932ea8b4c881689e2`; the branch is clean and tracks `origin/main`.
+- Deferred: no public hosting URL was invented or deployed. If a real frontend/API/MCP deployment is configured later, set its URLs explicitly in environment variables and rerun the link/smoke audit. The live `supo.live` comparison and preserved upstream provenance remain intentionally documented; they are not dead Open Klippah destinations.
