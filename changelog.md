@@ -111,3 +111,11 @@
 - Commands: committed as `89e2469` with `git commit -m "Remove unverified branded destinations"`; pushed with `GIT_TERMINAL_PROMPT=0 git push`.
 - Result: `origin/main` and local `HEAD` both resolve to `89e2469d9a6aac661327959932ea8b4c881689e2`; the branch is clean and tracks `origin/main`.
 - Deferred: no public hosting URL was invented or deployed. If a real frontend/API/MCP deployment is configured later, set its URLs explicitly in environment variables and rerun the link/smoke audit. The live `supo.live` comparison and preserved upstream provenance remain intentionally documented; they are not dead Open Klippah destinations.
+
+## 2026-10-20T21:24:57+00:00 — Removed remaining competitor references
+
+- Objective: satisfy the follow-up requirement that the Open Klippah source and user-facing product contain no remaining competitor-brand references.
+- Action: removed the remaining comparison article, its component, slug, blog metadata, marketing registry entry, landing-page card, and all related runtime imports. Removed the local upstream Git remote so the checkout no longer carries the original source URL in its configured remotes.
+- Verification: the working-tree source/docs/assets scan now finds no case-insensitive matches for the removed brand outside this append-only changelog; the production build generated only the three remaining Open Klippah blog routes; lint and typecheck passed; the affected marketing/attribution/auth tests passed with 42 tests.
+- Constraint: historical changelog entries and Git commit ancestry are retained for the required audit trail and repository provenance; no force-push or history rewrite was performed.
+- Current state: the source cleanup is ready to commit and publish. If a future requirement includes rewriting the historical Git graph or append-only audit log, that is a separate destructive operation requiring explicit direction.

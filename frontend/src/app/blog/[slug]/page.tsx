@@ -3,7 +3,6 @@ import { OpusClipComparisonArticle } from "@/components/articles/opusclip-compar
 import { SelfHostingGuideArticle } from "@/components/articles/self-hosting-guide-article";
 import { RelatedGuides } from "@/components/marketing/related-guides";
 import { SiteFooter } from "@/components/marketing/site-footer";
-import { SupoLiveArticle } from "@/components/supo-live-article";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -107,9 +106,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  if (slug === "openklippah-vs-supo-live") {
-    return <SupoLiveArticle post={post} />;
-  }
   if (slug === "openklippah-vs-opusclip") {
     return <OpusClipComparisonArticle post={post} />;
   }

@@ -54,7 +54,7 @@ export const marketingLinks: MarketingLink[] = [
     title: "Open-source video clipper you can control",
     label: "Open-source clipper",
     description: "What self-hosting changes about control, model providers, and infrastructure.",
-    related: [SELF_HOSTING_GUIDE_HREF, OPUSCLIP_COMPARISON_HREF, "/blog/openklippah-vs-supo-live"],
+    related: [SELF_HOSTING_GUIDE_HREF, OPUSCLIP_COMPARISON_HREF, "/demo"],
   },
   {
     href: SELF_HOSTING_GUIDE_HREF,
@@ -82,15 +82,6 @@ export const marketingLinks: MarketingLink[] = [
     label: "Self-hosted OpusClip alternative",
     description: "When a self-hosted, open-source clipper is the better route than a credit-based tool.",
     related: [OPUSCLIP_COMPARISON_HREF, SELF_HOSTING_GUIDE_HREF, "/open-source-video-clipper"],
-  },
-  {
-    href: "/blog/openklippah-vs-supo-live",
-    group: "comparison",
-    eyebrow: "Comparison",
-    title: "Open Klippah vs supo.live: open-source control",
-    label: "Open Klippah vs supo.live",
-    description: "Compare self-hosting, AI clipping, and editing workflows before choosing a video tool.",
-    related: ["/open-source-video-clipper", SELF_HOSTING_GUIDE_HREF, OPUSCLIP_COMPARISON_HREF],
   },
 ];
 

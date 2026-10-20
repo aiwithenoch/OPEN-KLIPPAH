@@ -199,7 +199,6 @@ const SEO_RESOURCES = [
   "/ai-video-clipper",
   "/youtube-shorts-clipper",
   "/open-source-video-clipper",
-  "/blog/openklippah-vs-supo-live",
 ].map((href) => getMarketingLink(href)).filter((link): link is MarketingLink => Boolean(link));
 
 export default function LandingPage() {

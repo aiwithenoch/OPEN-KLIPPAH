@@ -20,22 +20,6 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "openklippah-vs-supo-live",
-    image: { src: "/blog/openklippah-open-source-clipping.webp", alt: "Editorial illustration of a podcast recording becoming three vertical video clips", width: 1672, height: 941 },
-    title: "Open Klippah vs supo.live: Why Open Source Wins",
-    description:
-      "Compare Open Klippah and supo.live for AI video clipping. See why Open Klippah wins for open-source control, self-hosting, and customizable video workflows.",
-    eyebrow: "Supo.live Alternative",
-    category: "Comparison",
-    publishedAt: "2026-09-21",
-    updatedAt: "2026-10-05",
-    readingTime: "5 min read",
-    author: "Open Klippah",
-    keywords: ["Open Klippah vs supo.live", "supo.live alternative", "open-source video clipper", "self-hosted AI video clipping", "AI clip maker"],
-    summary:
-      "For creators and teams who want control over their clipping workflow, Open Klippah is the better open-source alternative to supo.live.",
-  },
-  {
     slug: "openklippah-vs-opusclip",
     title: "Open Klippah vs OpusClip: A Sourced Comparison",
     description:
