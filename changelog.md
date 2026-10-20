@@ -72,3 +72,10 @@
 - Objective: publish the supplied screenshot replacement to the requested Open Klippah repository.
 - Commands: committed as `ca1874e` with `git commit -m "Replace editor screenshot with clip projects image"`; pushed with `GIT_TERMINAL_PROMPT=0 git push`; verified the remote branch with `git ls-remote --heads origin main`.
 - Result: local `HEAD` and remote `origin/main` both resolve to `ca1874eb1ad2b170569e59e418105ef355f12cc1`; the worktree is clean and tracks `origin/main`.
+
+## 2026-10-20T21:12:02+00:00 — Diagnosed old live app-shell branding
+
+- Objective: investigate the user report that the old SupoClip app-shell wordmark is still visible after the Open Klippah rebrand.
+- Inspection: reviewed the supplied screenshot, searched the working tree and tracked source for case-insensitive `supoclip` references outside the preserved changelog/license, and inspected `frontend/src/components/app/app-shell.tsx`.
+- Finding: the current source renders `Open Klippah` in the signed-in desktop and mobile app shells and contains no tracked SupoClip runtime reference. The screenshot matches the prior hosted deployment and differs from the current repository UI, so the remaining old wordmark is deployment/cache state rather than an uncommitted source asset.
+- Decision: no additional source edit is required for this report. The Open Klippah `main` branch must be deployed to the intended hosting target/domain; the old `www.supoclip.com` deployment will continue to display its existing branding until replaced or retired.
