@@ -113,7 +113,7 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
           </Link>
           <nav className="flex items-center gap-2" aria-label="Primary navigation">
             <Link href="/blog"><Button variant="ghost" size="sm">Blog</Button></Link>
-            <Link href="/blog/self-host-supoclip-docker" className="hidden sm:block"><Button variant="ghost" size="sm">Self-host</Button></Link>
+            <Link href="/blog/self-host-openklippah-docker" className="hidden sm:block"><Button variant="ghost" size="sm">Self-host</Button></Link>
             <Link href="/sign-up"><Button size="sm">Start clipping</Button></Link>
           </nav>
         </div>

@@ -318,7 +318,7 @@ def create_optimized_clip(
             logger.info(f"Successfully created clip (stream copy): {output_path}")
             return True
 
-        with tempfile.TemporaryDirectory(prefix="supoclip_render_") as temp_dir:
+        with tempfile.TemporaryDirectory(prefix="openklippah_render_") as temp_dir:
             temp_root = Path(temp_dir)
             source_clip_path = temp_root / "source.mp4"
             final_clip_path = temp_root / "final.mp4"

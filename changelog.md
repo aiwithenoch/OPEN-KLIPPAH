@@ -34,3 +34,21 @@
 - Verification completed: `git diff --check` passed; frontend ESLint passed with `--max-warnings 0`; TypeScript typecheck passed; Vitest passed with 63 files and 345 tests; production `next build` passed and generated all routes. Build output emitted existing configuration warnings because no production `BETTER_AUTH_URL`/`BETTER_AUTH_SECRET` was supplied in the test environment; no build failure occurred.
 - Target remote check: `git ls-remote --heads https://github.com/aiwithenoch/OPEN-KLIPPAH.git` confirmed an existing `main` branch containing only an initial README commit. The original source was retained as the `upstream` remote; the target repository is configured as `origin`.
 - Current state: changes are ready to commit and publish. The target branch has unrelated history, so the initial target README must be preserved through an explicit unrelated-history merge before pushing; no force push is planned.
+
+## 2026-10-20T20:57:21+00:00 — Full upstream-name cleanup
+
+- Objective: honor the follow-up requirement that the working tree contain no remaining SupoClip product identifiers while keeping application behavior and the clipping pipeline equivalent.
+- Correction to earlier entries: the prior pass intentionally preserved lowercase `supoclip` identifiers and upstream URLs. That decision was superseded by the user’s explicit request for no remaining SupoClip traces.
+- Action: replaced remaining lowercase and uppercase identifiers with Open Klippah equivalents across tracked source, configuration, tests, docs, MCP environment names, API headers, Docker/service/database/network names, queue/cache/storage prefixes, route slugs, and URLs. Renamed the MCP package directory and two blog image assets to their Open Klippah names.
+- Preserved intentionally: `LICENSE`, the append-only historical entries in this changelog, and Git history containing upstream provenance. These are not runtime branding and must remain for attribution and auditability.
+- Domain assumption: `openklippah.com`, `api.openklippah.com`, and `mcp.openklippah.com` are provisional branded replacements because no production domain was supplied. They should be changed together if the final domain differs.
+- Push status: the first push attempt was interrupted before the target branch advanced; `origin/main` remained at the target repository’s initial README commit. No partial branch update was observed.
+- Current state: full cleanup is uncommitted and requires frontend, backend, and MCP verification before a new commit and push.
+
+## 2026-10-20T21:00:10+00:00 — Cleanup verification and Python identifier repair
+
+- Objective: remove the syntax regression introduced when the no-traces pass changed Python class identifiers containing the visible product name.
+- Action: repaired the MCP identifiers to valid `OpenKlippahClient`, `OpenKlippahError`, and `OpenKlippahApiKeyVerifier` names, while keeping human-facing strings branded `Open Klippah`.
+- Verification: bundled Python `compileall` passed for `backend/src`, `backend/tests`, `mcp/src`, `mcp/tests`, and `scripts`; `git diff --check` passed; tracked source and paths contain no case-insensitive `supoclip` references outside the preserved changelog and license. Frontend lint, typecheck, full Vitest, and production build had already passed after the full cleanup; the one email-deliveries timeout passed when rerun alone.
+- Limitation: `mcp/tests/test_client_download.py` could not run because the bundled Python environment does not include `pytest`; no dependency installation was performed.
+- Current state: cleanup is syntactically valid and ready for final review, commit, and non-force push to the configured Open Klippah origin.

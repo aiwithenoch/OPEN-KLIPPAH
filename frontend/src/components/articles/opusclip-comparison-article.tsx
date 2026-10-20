@@ -40,7 +40,7 @@ const toc: Array<[string, string]> = [
   ["verdict", "Short answer"],
   ["comparison", "Side by side"],
   ["pricing", "Pricing model"],
-  ["choose-supoclip", "When Open Klippah fits"],
+  ["choose-openklippah", "When Open Klippah fits"],
   ["choose-opusclip", "When OpusClip fits"],
   ["test", "Run your own test"],
   ["sources", "Sources"],
@@ -114,10 +114,10 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
             <tr><th scope="col" className="p-3">Area</th><th scope="col" className="p-3">Open Klippah</th><th scope="col" className="p-3">OpusClip</th></tr>
           </thead>
           <tbody>
-            {rows.map(([area, supoclip, opusclip]) => (
+            {rows.map(([area, openklippah, opusclip]) => (
               <tr key={area} className="border-t">
                 <th scope="row" className="p-3 align-top">{area}</th>
-                <td className="p-3 align-top text-muted-foreground">{supoclip}</td>
+                <td className="p-3 align-top text-muted-foreground">{openklippah}</td>
                 <td className="p-3 align-top text-muted-foreground">{opusclip}</td>
               </tr>
             ))}
@@ -144,7 +144,7 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
         <Link href={SELF_HOSTING_GUIDE_HREF}>self-hosting guide</Link> shows a fully local setup with no per-request AI fees.
       </p>
 
-      <h2 id="choose-supoclip">When Open Klippah is the better fit</h2>
+      <h2 id="choose-openklippah">When Open Klippah is the better fit</h2>
       <ul>
         <li><strong>You need control over where video goes.</strong> Self-hosting keeps the app, database, and rendered clips on your infrastructure. With Whisper and Ollama, transcription and clip selection run locally too.</li>
         <li><strong>You have a large back catalog.</strong> Self-hosted installs have no monthly video cap. Throughput depends on your hardware and provider limits.</li>
@@ -175,7 +175,7 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
       <h2 id="sources">Sources</h2>
       <ul>
         <li>OpusClip help center: <a href={OPUS_SOURCES.plans}>Plans and credits</a> and <a href={OPUS_SOURCES.watermark}>Watermark</a>. Plans can change; confirm current details on <a href="https://www.opus.pro/">opus.pro</a>.</li>
-        <li>Open Klippah: <a href={GITHUB_URL}>public repository</a>, including <a href={source("docker-compose.yml")}>docker-compose.yml</a>, <a href={source("docs/configuration.md")}>configuration docs</a>, and <a href={source("backend/src/services/billing_service.py")}>billing rules</a>. Hosted prices are from the pricing section of supoclip.com.</li>
+        <li>Open Klippah: <a href={GITHUB_URL}>public repository</a>, including <a href={source("docker-compose.yml")}>docker-compose.yml</a>, <a href={source("docs/configuration.md")}>configuration docs</a>, and <a href={source("backend/src/services/billing_service.py")}>billing rules</a>. Hosted prices are from the pricing section of openklippah.com.</li>
       </ul>
     </ArticleShell>
   );

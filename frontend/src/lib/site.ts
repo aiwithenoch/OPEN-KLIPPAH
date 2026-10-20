@@ -1,11 +1,11 @@
 export const SITE_NAME = "Open Klippah";
-export const DEFAULT_SITE_URL = "https://www.supoclip.com";
+export const DEFAULT_SITE_URL = "https://www.openklippah.com";
 export const HOSTED_APP_URL = DEFAULT_SITE_URL;
 export const GITHUB_URL = "https://github.com/aiwithenoch/OPEN-KLIPPAH";
 export const APP_STORE_ID = "6784760040";
-export const APP_STORE_URL = `https://apps.apple.com/us/app/supoclip/id${APP_STORE_ID}`;
+export const APP_STORE_URL = `https://apps.apple.com/us/app/openklippah/id${APP_STORE_ID}`;
 export const PRODUCT_HUNT_URL =
-  "https://www.producthunt.com/products/supoclip?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-supoclip";
+  "https://www.producthunt.com/products/openklippah?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-openklippah";
 /** Product Hunt's launch badge; it shows the live upvote count once the launch is up. */
 export const PRODUCT_HUNT_BADGE_URL =
   "https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1276786&theme=dark";

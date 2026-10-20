@@ -253,12 +253,12 @@ cd frontend && pnpm run test:e2e
 Useful backend test env vars:
 
 ```bash
-DATABASE_URL=postgresql+asyncpg://localhost:5432/supoclip
-TEST_DATABASE_URL=postgresql+asyncpg://localhost:5432/supoclip
+DATABASE_URL=postgresql+asyncpg://localhost:5432/openklippah
+TEST_DATABASE_URL=postgresql+asyncpg://localhost:5432/openklippah
 REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
-BACKEND_AUTH_SECRET=supoclip_test_secret
-BETTER_AUTH_SECRET=supoclip_better_auth_test_secret
+BACKEND_AUTH_SECRET=openklippah_test_secret
+BETTER_AUTH_SECRET=openklippah_better_auth_test_secret
 ```
 
 ### Coverage and CI

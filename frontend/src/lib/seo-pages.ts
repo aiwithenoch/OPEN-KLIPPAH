@@ -82,7 +82,7 @@ export const seoPages: SeoPage[] = [
         ],
         links: [
           { href: "/youtube-shorts-clipper", label: "Step-by-step: turn a YouTube video into Shorts" },
-          { href: "/blog/self-host-supoclip-docker", label: "Run the pipeline yourself with Docker" },
+          { href: "/blog/self-host-openklippah-docker", label: "Run the pipeline yourself with Docker" },
         ],
       },
       {
@@ -92,7 +92,7 @@ export const seoPages: SeoPage[] = [
           "It is especially useful when ownership matters: self-hosters retain control of the application and can modify the source instead of depending entirely on a closed editing platform.",
         ],
         links: [
-          { href: "/blog/supoclip-vs-opusclip", label: "How Open Klippah compares with OpusClip" },
+          { href: "/blog/openklippah-vs-opusclip", label: "How Open Klippah compares with OpusClip" },
           { href: "/open-source-video-clipper", label: "Why teams choose an open-source clipper" },
         ],
       },
@@ -161,7 +161,7 @@ export const seoPages: SeoPage[] = [
           "Protect secrets and authenticated routes",
           "Monitor processing jobs and generated media",
         ],
-        links: [{ href: "/blog/self-host-supoclip-docker", label: "Production checklist in the self-hosting guide" }],
+        links: [{ href: "/blog/self-host-openklippah-docker", label: "Production checklist in the self-hosting guide" }],
       },
       {
         heading: "Start with Docker, customize when needed",
@@ -170,8 +170,8 @@ export const seoPages: SeoPage[] = [
           "Creators who prefer not to operate infrastructure can use the hosted Open Klippah application while keeping the open-source repository available as a migration path.",
         ],
         links: [
-          { href: "/blog/self-host-supoclip-docker", label: "Self-host Open Klippah with Docker Compose" },
-          { href: "/blog/supoclip-vs-opusclip", label: "Self-hosted Open Klippah vs hosted OpusClip" },
+          { href: "/blog/self-host-openklippah-docker", label: "Self-host Open Klippah with Docker Compose" },
+          { href: "/blog/openklippah-vs-opusclip", label: "Self-hosted Open Klippah vs hosted OpusClip" },
         ],
       },
     ],
@@ -247,7 +247,7 @@ export const seoPages: SeoPage[] = [
           "Treat each long video as a source library rather than a one-time upload. Process the recording, group clips by theme, and connect each Short back to the longer video or a relevant product page.",
           "Track which topics earn watch time and engagement, then use those results to guide future recordings. Open Klippah's scores help prioritize candidates; publishing data should determine what the audience actually values.",
         ],
-        links: [{ href: "/blog/supoclip-vs-opusclip", label: "Choosing between Open Klippah and OpusClip" }],
+        links: [{ href: "/blog/openklippah-vs-opusclip", label: "Choosing between Open Klippah and OpusClip" }],
       },
     ],
     faqs: [

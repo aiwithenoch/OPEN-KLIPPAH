@@ -51,7 +51,7 @@ The backend can infer a default LLM from whichever API key is present, but setti
 | `NEXT_PUBLIC_LANDING_ONLY_MODE` | `false` | Restricts the UI to the landing page only |
 | `TEMP_DIR` | `/app/uploads` in Docker | Temporary backend working directory for uploads and processing |
 | `MEDIA_STORAGE` | `local` | `s3` stores durable media in a private bucket; see [Media storage](media-storage.md) for configuration, retention and migration |
-| `CORS_ORIGINS` | `http://localhost:3107,http://sp.localhost:3107,http://supoclip.localhost:3107` | Allowed browser origins for backend requests, including direct browser video uploads |
+| `CORS_ORIGINS` | `http://localhost:3107,http://sp.localhost:3107,http://openklippah.localhost:3107` | Allowed browser origins for backend requests, including direct browser video uploads |
 
 ## Analytics Settings
 
@@ -60,7 +60,7 @@ Open Klippah can send pageviews and custom product events to DataFast from the `
 | Variable | Default | Purpose |
 |---|---|---|
 | `NEXT_PUBLIC_DATAFAST_WEBSITE_ID` | unset | Public DataFast website ID used by the tracking script |
-| `NEXT_PUBLIC_DATAFAST_DOMAIN` | unset | Root domain tracked by DataFast, for example `supoclip.com` |
+| `NEXT_PUBLIC_DATAFAST_DOMAIN` | unset | Root domain tracked by DataFast, for example `openklippah.com` |
 | `NEXT_PUBLIC_DATAFAST_ALLOW_LOCALHOST` | `false` | Enables local tracking on `localhost` when explicitly set to `true` |
 
 ### DataFast behavior
@@ -116,9 +116,9 @@ Fonts and transitions are configured by mounted files rather than environment va
 | `REDIS_HOST` | `redis` in Docker, `localhost` in code | Redis hostname |
 | `REDIS_PORT` | `6379` | Redis port |
 | `DATABASE_URL` | injected by Docker | PostgreSQL connection string |
-| `POSTGRES_DB` | `supoclip` | PostgreSQL database name |
-| `POSTGRES_USER` | `supoclip` | PostgreSQL username |
-| `POSTGRES_PASSWORD` | `supoclip_password` | PostgreSQL password |
+| `POSTGRES_DB` | `openklippah` | PostgreSQL database name |
+| `POSTGRES_USER` | `openklippah` | PostgreSQL username |
+| `POSTGRES_PASSWORD` | `openklippah_password` | PostgreSQL password |
 
 ## Self-Host and Monetization Settings
 

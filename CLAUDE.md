@@ -258,7 +258,7 @@ Personalized analyses skip the shared `processing_cache` analysis entry.
   except `GET /social/providers`, which reports `enabled: false` with all platforms unconfigured
   (so the web and iOS hide publishing) and the disconnect routes (account deletion revokes tokens).
 - **iOS app:** `POST .../authorize` with `{"client": "ios"}` prefixes the OAuth state with `m.`; the
-  web callback then redirects to `supoclip://social-callback?provider&code&state` and the app
+  web callback then redirects to `openklippah://social-callback?provider&code&state` and the app
   completes `/callback` with its own session (the state stays bound to the starting user).
 - **Platform approvals gate real users:** TikTok only allows sandbox target users until its audit,
   Instagram only app testers until Meta review, and YouTube uploads from an unaudited project stay
@@ -279,7 +279,7 @@ Edit `backend/src/ai.py`: `simplified_system_prompt` controls selection criteria
 ## iOS App
 
 A native iOS app ships on the App Store
-(https://apps.apple.com/us/app/supoclip/id6784760040, app id `6784760040`). Its
+(https://apps.apple.com/us/app/openklippah/id6784760040, app id `6784760040`). Its
 source lives outside this repo. It talks to the hosted API and bills through
 RevenueCat, which is what `frontend/src/app/api/billing/revenuecat-webhook/`
 serves; App Store subscribers are blocked from Stripe checkout/portal by the
@@ -297,14 +297,14 @@ environment configuration. See `backend/README.md` for setup.
 ## MCP Server
 
 `mcp/` is a standalone [MCP](https://modelcontextprotocol.io) server
-(`supoclip-mcp`, Python/FastMCP, stdio) that exposes Open Klippah to MCP clients
+(`openklippah-mcp`, Python/FastMCP, stdio) that exposes Open Klippah to MCP clients
 (Claude Desktop/Code, Cursor, …). It is a thin client over the REST API.
 
-- **Default target:** the hosted API `https://api.supoclip.com`. Override with
-  `SUPOCLIP_API_URL` for self-hosting (e.g. `http://localhost:8000`).
-- **Auth:** a per-user API key in `SUPOCLIP_API_KEY` (see API keys above).
-  Self-hosters may instead use `SUPOCLIP_USER_ID` (+ `SUPOCLIP_AUTH_SECRET` when
+- **Default target:** the hosted API `https://api.openklippah.com`. Override with
+  `OPEN_KLIPPAH_API_URL` for self-hosting (e.g. `http://localhost:8000`).
+- **Auth:** a per-user API key in `OPEN_KLIPPAH_API_KEY` (see API keys above).
+  Self-hosters may instead use `OPEN_KLIPPAH_USER_ID` (+ `OPEN_KLIPPAH_AUTH_SECRET` when
   signing is enforced).
 - **Tools:** create/list/get/wait/cancel/resume/delete tasks, list/download/
   export clips, and public discovery (templates, transitions, fonts, B-roll).
-- Run with `cd mcp && uv run supoclip-mcp`. Details in `mcp/README.md`.
+- Run with `cd mcp && uv run openklippah-mcp`. Details in `mcp/README.md`.

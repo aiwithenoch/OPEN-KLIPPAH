@@ -15,23 +15,23 @@ activated users (people who export a clip), not just visits.
 
 | Page | URL | Use it for |
 |------|-----|------------|
-| Home | `https://www.supoclip.com/` | Product Hunt, general announcements |
-| Demo | `https://www.supoclip.com/demo` | Social posts: real output, with timestamps back to the source |
-| Self-hosting guide | `https://www.supoclip.com/blog/self-host-supoclip-docker` | r/selfhosted, developer communities |
-| Open Klippah vs OpusClip | `https://www.supoclip.com/blog/supoclip-vs-opusclip` | "OpusClip alternative" threads and questions |
-| Open-source clipper | `https://www.supoclip.com/open-source-video-clipper` | Open-source communities |
+| Home | `https://www.openklippah.com/` | Product Hunt, general announcements |
+| Demo | `https://www.openklippah.com/demo` | Social posts: real output, with timestamps back to the source |
+| Self-hosting guide | `https://www.openklippah.com/blog/self-host-openklippah-docker` | r/selfhosted, developer communities |
+| Open Klippah vs OpusClip | `https://www.openklippah.com/blog/openklippah-vs-opusclip` | "OpusClip alternative" threads and questions |
+| Open-source clipper | `https://www.openklippah.com/open-source-video-clipper` | Open-source communities |
 | GitHub | `https://github.com/aiwithenoch/OPEN-KLIPPAH` | Hacker News, developer audiences |
 
 **Visual assets in the repo**
 
 - `assets/banner.jpg`: README cover / social header
-- `frontend/public/blog/supoclip-editor.webp`: real editor screenshot (sample test footage)
-- `frontend/public/blog/supoclip-open-source-clipping.webp`: illustration (AI-generated, label it as such)
+- `frontend/public/blog/openklippah-editor.webp`: real editor screenshot (sample test footage)
+- `frontend/public/blog/openklippah-open-source-clipping.webp`: illustration (AI-generated, label it as such)
 - `frontend/public/clips/demo-{1,2}.mp4` + `.jpg`: demo clip previews
 
 > **Rights note:** the demo clips come from a third-party interview
 > ([source](https://www.youtube.com/watch?v=Vv3CEAS_w34)). They're shown on
-> supoclip.com with attribution and links to the source. **Don't upload them as
+> openklippah.com with attribution and links to the source. **Don't upload them as
 > native posts to TikTok, Reels, Shorts, or X.** For native video, record the
 > demo below using footage we own.
 
@@ -50,14 +50,14 @@ Use these claims freely. Each one is backed by the code or the site:
 | Face-aware 9:16 reframing, word-synced captions, hook titles | `backend/src/media/` |
 | Export presets for TikTok, Reels, and Shorts | `backend/src/clip_editor.py` |
 | REST API with per-user keys, plus an MCP server | `docs/api-reference.md`, `mcp/README.md` |
-| Hosted plans: Pro $10/mo (50 videos), Scale $50/mo (300 videos) | Pricing section on supoclip.com |
+| Hosted plans: Pro $10/mo (50 videos), Scale $50/mo (300 videos) | Pricing section on openklippah.com |
 
 **Don't say:**
 
 - "Free" without qualification. Hosted Open Klippah has **no free plan**. Say "free to self-host."
 - Any speed, accuracy, or quality number ("10x faster", "95% accurate", "better clips than OpusClip"). We haven't run a benchmark that supports one.
 - That virality scores predict views. They rank candidates for review.
-- OpusClip prices or credit amounts. They change; link to the [comparison](https://www.supoclip.com/blog/supoclip-vs-opusclip) instead.
+- OpusClip prices or credit amounts. They change; link to the [comparison](https://www.openklippah.com/blog/openklippah-vs-opusclip) instead.
 - "Fully offline." Downloading YouTube links needs internet access, and optional B-roll uses Pexels.
 
 ## Campaign links
@@ -81,17 +81,17 @@ values on capture anyway, so `Reddit` and `reddit` are counted together.
 **Ready-made links**
 
 ```text
-Product Hunt   https://www.supoclip.com/?utm_source=producthunt&utm_medium=launch&utm_campaign=launch_2026_10
-r/selfhosted   https://www.supoclip.com/blog/self-host-supoclip-docker?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=r_selfhosted
-r/opensource   https://www.supoclip.com/open-source-video-clipper?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=r_opensource
-X thread       https://www.supoclip.com/demo?utm_source=x&utm_medium=social&utm_campaign=launch_2026_10&utm_content=thread_1
-LinkedIn       https://www.supoclip.com/demo?utm_source=linkedin&utm_medium=social&utm_campaign=launch_2026_10
-Newsletter     https://www.supoclip.com/?utm_source=newsletter&utm_medium=email&utm_campaign=launch_2026_10
-YouTube desc.  https://www.supoclip.com/demo?utm_source=youtube&utm_medium=video&utm_campaign=launch_2026_10
-OpusClip Q&A   https://www.supoclip.com/blog/supoclip-vs-opusclip?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=opusclip_thread
+Product Hunt   https://www.openklippah.com/?utm_source=producthunt&utm_medium=launch&utm_campaign=launch_2026_10
+r/selfhosted   https://www.openklippah.com/blog/self-host-openklippah-docker?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=r_selfhosted
+r/opensource   https://www.openklippah.com/open-source-video-clipper?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=r_opensource
+X thread       https://www.openklippah.com/demo?utm_source=x&utm_medium=social&utm_campaign=launch_2026_10&utm_content=thread_1
+LinkedIn       https://www.openklippah.com/demo?utm_source=linkedin&utm_medium=social&utm_campaign=launch_2026_10
+Newsletter     https://www.openklippah.com/?utm_source=newsletter&utm_medium=email&utm_campaign=launch_2026_10
+YouTube desc.  https://www.openklippah.com/demo?utm_source=youtube&utm_medium=video&utm_campaign=launch_2026_10
+OpusClip Q&A   https://www.openklippah.com/blog/openklippah-vs-opusclip?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=opusclip_thread
 ```
 
-Hacker News: link the GitHub repo or `https://www.supoclip.com/` **without** tags.
+Hacker News: link the GitHub repo or `https://www.openklippah.com/` **without** tags.
 
 ## Channel copy
 
@@ -115,7 +115,7 @@ posting, and reply to comments for the first few hours.
 > There's a paid hosted version for people who don't want to run it.
 >
 > Repo: https://github.com/aiwithenoch/OPEN-KLIPPAH
-> Demo: https://www.supoclip.com/demo
+> Demo: https://www.openklippah.com/demo
 >
 > I'd love feedback on clip selection quality and the self-hosting experience.
 
@@ -184,7 +184,7 @@ podcast episode with written permission).
 | 35–50s | Editor: trim, change caption style, preview | "Adjust timing and captions before exporting." |
 | 50–60s | Export with the TikTok preset; download completes | "Export for TikTok, Reels, or Shorts. No watermark." |
 | 60–70s | Terminal: `docker compose up -d --build`, then GitHub repo | "It's open source. Run it yourself, or use the hosted app." |
-| End card | Logo + `supoclip.com/demo` | |
+| End card | Logo + `openklippah.com/demo` | |
 
 Don't show a processing time unless it's the real, unedited duration, and say
 which hardware or plan produced it.
@@ -251,7 +251,7 @@ which hardware or plan produced it.
 ### Activation by source (SQL)
 
 ```sql
--- docker exec -it supoclip-postgres psql -U supoclip -d supoclip
+-- docker exec -it openklippah-postgres psql -U openklippah -d openklippah
 SELECT
   COALESCE(a.utm_source, a.referrer_host, '(direct)')            AS source,
   COALESCE(a.utm_campaign, '-')                                   AS campaign,

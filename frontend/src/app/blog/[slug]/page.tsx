@@ -37,25 +37,25 @@ const comparisonRows = [
   {
     icon: ShieldCheck,
     feature: "Free usage model",
-    supoclip: "Open source and self-hostable with no plan limits. Your costs are your own compute and API keys. The hosted app is paid.",
+    openklippah: "Open source and self-hostable with no plan limits. Your costs are your own compute and API keys. The hosted app is paid.",
     opusClip: "Free plan exists, but exports can include an OpusClip watermark.",
   },
   {
     icon: Sparkles,
     feature: "Clip discovery",
-    supoclip: "Transcribes long videos, scores segments, and surfaces promising short-form moments.",
+    openklippah: "Transcribes long videos, scores segments, and surfaces promising short-form moments.",
     opusClip: "AI clipping workflow built for finding social-ready clips from long videos.",
   },
   {
     icon: ScanFace,
     feature: "Vertical formatting",
-    supoclip: "Face-centered 9:16 cropping, subtitles, and platform-ready exports.",
+    openklippah: "Face-centered 9:16 cropping, subtitles, and platform-ready exports.",
     opusClip: "Offers short-form exports and AI reframing for social platforms.",
   },
   {
     icon: Github,
     feature: "Control",
-    supoclip: "Full source access, editable deployment, and no vendor lock-in.",
+    openklippah: "Full source access, editable deployment, and no vendor lock-in.",
     opusClip: "Hosted product with managed workflows and subscription tiers.",
   },
 ];
@@ -107,13 +107,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound();
   }
 
-  if (slug === "supoclip-vs-supo-live") {
+  if (slug === "openklippah-vs-supo-live") {
     return <SupoLiveArticle post={post} />;
   }
-  if (slug === "supoclip-vs-opusclip") {
+  if (slug === "openklippah-vs-opusclip") {
     return <OpusClipComparisonArticle post={post} />;
   }
-  if (slug === "self-host-supoclip-docker") {
+  if (slug === "self-host-openklippah-docker") {
     return <SelfHostingGuideArticle post={post} />;
   }
 
@@ -329,7 +329,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 walks through the setup, including a fully local Whisper + Ollama option.
               </p>
 
-              <h2 id="supoclip-vs-opusclip">Open Klippah vs OpusClip</h2>
+              <h2 id="openklippah-vs-opusclip">Open Klippah vs OpusClip</h2>
               <p>
                 The summary below covers the essentials. For a row-by-row comparison with a source
                 for every claim, read <Link href={OPUSCLIP_COMPARISON_HREF}>Open Klippah vs OpusClip: a sourced comparison</Link>.
@@ -348,7 +348,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     <Icon className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
                     {row.feature}
                   </div>
-                  <div className="border-l p-4 leading-6 text-muted-foreground">{row.supoclip}</div>
+                  <div className="border-l p-4 leading-6 text-muted-foreground">{row.openklippah}</div>
                   <div className="border-l p-4 leading-6 text-muted-foreground">{row.opusClip}</div>
                 </div>
               ))}
@@ -466,7 +466,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <a href="#quick-verdict" className="block text-muted-foreground hover:text-foreground">
                     Quick verdict
                   </a>
-                  <a href="#supoclip-vs-opusclip" className="block text-muted-foreground hover:text-foreground">
+                  <a href="#openklippah-vs-opusclip" className="block text-muted-foreground hover:text-foreground">
                     Comparison
                   </a>
                   <a href="#faq" className="block text-muted-foreground hover:text-foreground">

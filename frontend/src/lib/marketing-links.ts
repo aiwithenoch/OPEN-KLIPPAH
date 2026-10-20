@@ -16,8 +16,8 @@ export interface MarketingLink {
   related: string[];
 }
 
-export const SELF_HOSTING_GUIDE_HREF = "/blog/self-host-supoclip-docker";
-export const OPUSCLIP_COMPARISON_HREF = "/blog/supoclip-vs-opusclip";
+export const SELF_HOSTING_GUIDE_HREF = "/blog/self-host-openklippah-docker";
+export const OPUSCLIP_COMPARISON_HREF = "/blog/openklippah-vs-opusclip";
 
 export const marketingLinks: MarketingLink[] = [
   {
@@ -54,7 +54,7 @@ export const marketingLinks: MarketingLink[] = [
     title: "Open-source video clipper you can control",
     label: "Open-source clipper",
     description: "What self-hosting changes about control, model providers, and infrastructure.",
-    related: [SELF_HOSTING_GUIDE_HREF, OPUSCLIP_COMPARISON_HREF, "/blog/supoclip-vs-supo-live"],
+    related: [SELF_HOSTING_GUIDE_HREF, OPUSCLIP_COMPARISON_HREF, "/blog/openklippah-vs-supo-live"],
   },
   {
     href: SELF_HOSTING_GUIDE_HREF,
@@ -84,7 +84,7 @@ export const marketingLinks: MarketingLink[] = [
     related: [OPUSCLIP_COMPARISON_HREF, SELF_HOSTING_GUIDE_HREF, "/open-source-video-clipper"],
   },
   {
-    href: "/blog/supoclip-vs-supo-live",
+    href: "/blog/openklippah-vs-supo-live",
     group: "comparison",
     eyebrow: "Comparison",
     title: "Open Klippah vs supo.live: open-source control",

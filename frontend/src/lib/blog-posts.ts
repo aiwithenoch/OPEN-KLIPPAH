@@ -20,8 +20,8 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "supoclip-vs-supo-live",
-    image: { src: "/blog/supoclip-open-source-clipping.webp", alt: "Editorial illustration of a podcast recording becoming three vertical video clips", width: 1672, height: 941 },
+    slug: "openklippah-vs-supo-live",
+    image: { src: "/blog/openklippah-open-source-clipping.webp", alt: "Editorial illustration of a podcast recording becoming three vertical video clips", width: 1672, height: 941 },
     title: "Open Klippah vs supo.live: Why Open Source Wins",
     description:
       "Compare Open Klippah and supo.live for AI video clipping. See why Open Klippah wins for open-source control, self-hosting, and customizable video workflows.",
@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
       "For creators and teams who want control over their clipping workflow, Open Klippah is the better open-source alternative to supo.live.",
   },
   {
-    slug: "supoclip-vs-opusclip",
+    slug: "openklippah-vs-opusclip",
     title: "Open Klippah vs OpusClip: A Sourced Comparison",
     description:
       "Open Klippah vs OpusClip compared on deployment, pricing model, watermarks, model choice, and workflow, with a source linked for every claim.",
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
       "A side-by-side of what each product documents, where the two differ, and which one fits your workflow.",
   },
   {
-    slug: "self-host-supoclip-docker",
+    slug: "self-host-openklippah-docker",
     title: "How to Self-Host Open Klippah with Docker Compose",
     description:
       "Self-host Open Klippah, the open-source AI video clipper: requirements, .env setup, a fully local Whisper + Ollama option, first-run checks, and a production checklist.",

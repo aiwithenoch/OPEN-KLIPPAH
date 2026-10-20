@@ -1,5 +1,5 @@
 [project]
-name = "supoclip-backend"
+name = "openklippah-backend"
 version = "0.1.0"
 description = "Python-based backend for Open Klippah"
 readme = "README.md"

@@ -43,7 +43,7 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
         dateModified: post.updatedAt,
         author: { "@type": "Organization", name: post.author },
         publisher: { "@type": "Organization", name: "Open Klippah", url: getSiteUrl(), logo: { "@type": "ImageObject", url: `${getSiteUrl()}/logo.png` } },
-        image: post.image ? [`${getSiteUrl()}${post.image.src}`, `${getSiteUrl()}/blog/supoclip-editor.webp`] : undefined,
+        image: post.image ? [`${getSiteUrl()}${post.image.src}`, `${getSiteUrl()}/blog/openklippah-editor.webp`] : undefined,
         articleSection: post.category,
         inLanguage: "en",
         mainEntityOfPage: `${getSiteUrl()}/blog/${post.slug}`,
@@ -100,7 +100,7 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
           </p>
           <h2>What is Open Klippah?</h2>
           <p>
-            Open Klippah is an open-source AI video clipping tool available through supoclip.com or as a self-hosted
+            Open Klippah is an open-source AI video clipping tool available through openklippah.com or as a self-hosted
             application. It analyzes long videos, selects promising moments, and produces vertical clips with
             face-centered cropping and word-synced subtitles. Hook titles, clip scoring, and optional B-roll
             help turn a raw recording into material ready for your final review.
@@ -125,8 +125,8 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
                   ["Core use case", "Recorded long videos into vertical shorts", "Live broadcasts and recorded videos"],
                   ["Customization", "Modify the code and configure the LLM provider", "Use the service’s editor and settings"],
                   ["Usage model", "Self-hosting uses your compute and provider budget", "Subscription plans with processing credits"],
-                ].map(([feature, supoclip, supo]) => (
-                  <tr key={feature} className="border-t"><th scope="row" className="p-4 align-top">{feature}</th><td className="p-4 align-top">{supoclip}</td><td className="p-4 align-top">{supo}</td></tr>
+                ].map(([feature, openklippah, supo]) => (
+                  <tr key={feature} className="border-t"><th scope="row" className="p-4 align-top">{feature}</th><td className="p-4 align-top">{openklippah}</td><td className="p-4 align-top">{supo}</td></tr>
                 ))}
               </tbody>
             </table>
@@ -146,7 +146,7 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
             <figcaption className="mt-4 text-xs leading-5 text-muted-foreground">Open Klippah’s recorded-video workflow. AI suggests; you make the final editorial decision.</figcaption>
           </figure>
           <figure className="overflow-hidden rounded-2xl border">
-            <a href="/blog/supoclip-editor.webp" aria-label="View full-size Open Klippah editor screenshot"><Image src="/blog/supoclip-editor.webp" alt="Open Klippah editor with clip list, vertical preview, caption styling controls, and a timeline" width={1800} height={1109} sizes="(max-width: 768px) 100vw, 768px" className="h-auto w-full" /></a>
+            <a href="/blog/openklippah-editor.webp" aria-label="View full-size Open Klippah editor screenshot"><Image src="/blog/openklippah-editor.webp" alt="Open Klippah editor with clip list, vertical preview, caption styling controls, and a timeline" width={1800} height={1109} sizes="(max-width: 768px) 100vw, 768px" className="h-auto w-full" /></a>
             <figcaption className="bg-muted/25 px-5 py-4 text-sm leading-6 text-muted-foreground">Inside the Open Klippah editor: adjust captions, framing, and timing before export. Actual product screenshot using sample test footage; click to enlarge.</figcaption>
           </figure>
           <h2 id="control" className="scroll-mt-8">Why Open Klippah is the better open-source alternative</h2>

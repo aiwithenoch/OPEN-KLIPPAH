@@ -81,11 +81,11 @@ docker-compose ps
 
 You should see these services:
 
-- `supoclip-frontend`
-- `supoclip-backend`
-- `supoclip-worker`
-- `supoclip-postgres`
-- `supoclip-redis`
+- `openklippah-frontend`
+- `openklippah-backend`
+- `openklippah-worker`
+- `openklippah-postgres`
+- `openklippah-redis`
 
 ### 5. Open the application
 

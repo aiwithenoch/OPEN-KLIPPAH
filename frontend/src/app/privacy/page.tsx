@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { HOSTED_APP_URL, getSiteUrl } from "@/lib/blog-posts";
 
 const LAST_UPDATED = "October 16, 2026";
-const CONTACT_EMAIL = "privacy@supoclip.com";
+const CONTACT_EMAIL = "privacy@openklippah.com";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Open Klippah",
@@ -132,7 +132,7 @@ export default function PrivacyPolicyPage() {
               which channels bring people who find Open Klippah useful. If analytics are enabled, the
               sign-up and clip-export events we send to our analytics provider include the same
               campaign fields. We don&apos;t use this information for advertising or sell it. You can
-              remove the record from your browser by clearing site data for supoclip.com.
+              remove the record from your browser by clearing site data for openklippah.com.
             </p>
           </Section>
 

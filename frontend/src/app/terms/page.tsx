@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { HOSTED_APP_URL, getSiteUrl } from "@/lib/blog-posts";
 
 const LAST_UPDATED = "July 2, 2026";
-const CONTACT_EMAIL = "support@supoclip.com";
+const CONTACT_EMAIL = "support@openklippah.com";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Open Klippah",

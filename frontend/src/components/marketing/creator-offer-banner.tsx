@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 
 import { CREATOR_OFFER_TEXT, captureCreatorCodeFromUrl } from "@/lib/creator-code";
 
-const DISMISSED_KEY = "supoclip:creator-offer-dismissed";
+const DISMISSED_KEY = "openklippah:creator-offer-dismissed";
 
 /** Quiet note for visitors who arrived through a creator's link. */
 export function CreatorOfferBanner() {

@@ -51,11 +51,11 @@ asyncio.run(main())
 def main():
     snapshot={}
     try:
-        with urllib.request.urlopen('https://www.supoclip.com/',timeout=20) as response:
+        with urllib.request.urlopen('https://www.openklippah.com/',timeout=20) as response:
             snapshot['public_site_status']=response.status
     except Exception as error:
         snapshot['public_site_error']=type(error).__name__
-    command='docker exec supoclip-backend /app/.venv/bin/python -c '+shlex.quote(REMOTE)
+    command='docker exec openklippah-backend /app/.venv/bin/python -c '+shlex.quote(REMOTE)
     try:
         response=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','hetzner',command],
             check=True,capture_output=True,text=True,timeout=90)
@@ -64,7 +64,7 @@ def main():
         snapshot['production_error']=type(error).__name__
     try:
         response=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','hetzner',
-            'docker ps -a --filter name=supoclip --format '+shlex.quote('{{.Names}}: {{.Status}}')],
+            'docker ps -a --filter name=openklippah --format '+shlex.quote('{{.Names}}: {{.Status}}')],
             check=True,capture_output=True,text=True,timeout=25)
         snapshot['containers']=response.stdout.strip().splitlines()
     except Exception as error:

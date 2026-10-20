@@ -93,9 +93,9 @@ def create_app(
         allow_headers=[
             "Content-Type",
             "Authorization",
-            "x-supoclip-user-id",
-            "x-supoclip-ts",
-            "x-supoclip-signature",
+            "x-openklippah-user-id",
+            "x-openklippah-ts",
+            "x-openklippah-signature",
             "x-trace-id",
             "user_id",
         ],

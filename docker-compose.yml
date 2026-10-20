@@ -16,7 +16,7 @@ services:
         - NEXT_PUBLIC_DATAFAST_WEBSITE_ID=${NEXT_PUBLIC_DATAFAST_WEBSITE_ID:-}
         - NEXT_PUBLIC_DATAFAST_DOMAIN=${NEXT_PUBLIC_DATAFAST_DOMAIN:-}
         - NEXT_PUBLIC_DATAFAST_ALLOW_LOCALHOST=${NEXT_PUBLIC_DATAFAST_ALLOW_LOCALHOST:-false}
-    container_name: supoclip-frontend
+    container_name: openklippah-frontend
     ports:
       # Keep the legacy port for deployments whose proxy already uses 3001.
       # .env.example selects 3107 for new self-hosted installations.
@@ -36,8 +36,8 @@ services:
       - DISABLE_SIGN_UP=${DISABLE_SIGN_UP:-false}
       - BACKEND_AUTH_SECRET=${BACKEND_AUTH_SECRET}
       - APP_SETTINGS_ENCRYPTION_KEY=${APP_SETTINGS_ENCRYPTION_KEY}
-      - DATABASE_URL=postgresql://supoclip:supoclip_password@postgres:5432/supoclip
-      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:-supoclip_dev_secret_change_in_production}
+      - DATABASE_URL=postgresql://openklippah:openklippah_password@postgres:5432/openklippah
+      - BETTER_AUTH_SECRET=${BETTER_AUTH_SECRET:-openklippah_dev_secret_change_in_production}
       - BETTER_AUTH_URL=${BETTER_AUTH_URL:-http://localhost:3107}
       - BETTER_AUTH_TRUSTED_ORIGINS=${BETTER_AUTH_TRUSTED_ORIGINS:-}
       - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
@@ -82,7 +82,7 @@ services:
       dockerfile: Dockerfile
       args:
         BACKEND_CPU_ONLY: ${BACKEND_CPU_ONLY:-false}
-    container_name: supoclip-backend
+    container_name: openklippah-backend
     platform: linux/amd64
     command: [".venv/bin/uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]
     ports:
@@ -96,7 +96,7 @@ services:
     environment:
       - PYTHONPATH=/app
       - PYTHONUNBUFFERED=1
-      - DATABASE_URL=postgresql+asyncpg://supoclip:supoclip_password@postgres:5432/supoclip
+      - DATABASE_URL=postgresql+asyncpg://openklippah:openklippah_password@postgres:5432/openklippah
       - TEMP_DIR=/app/uploads
       - MEDIA_STORAGE=${MEDIA_STORAGE:-local}
       - MEDIA_S3_BUCKET=${MEDIA_S3_BUCKET:-}
@@ -163,7 +163,7 @@ services:
       - BACKEND_AUTH_SECRET=${BACKEND_AUTH_SECRET}
       - APP_SETTINGS_ENCRYPTION_KEY=${APP_SETTINGS_ENCRYPTION_KEY}
       - AUTH_SIGNATURE_TTL_SECONDS=${AUTH_SIGNATURE_TTL_SECONDS:-300}
-      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3107,http://sp.localhost:3107,http://supoclip.localhost:3107}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3107,http://sp.localhost:3107,http://openklippah.localhost:3107}
       - FREE_PLAN_TASK_LIMIT=${FREE_PLAN_TASK_LIMIT:-10}
       - PRO_PLAN_TASK_LIMIT=${PRO_PLAN_TASK_LIMIT:-50}
       - SCALE_PLAN_TASK_LIMIT=${SCALE_PLAN_TASK_LIMIT:-300}
@@ -207,20 +207,20 @@ services:
     build:
       context: ./mcp
       dockerfile: Dockerfile
-    container_name: supoclip-mcp
+    container_name: openklippah-mcp
     ports:
-      - "127.0.0.1:${SUPOCLIP_MCP_PORT:-9100}:9100"
+      - "127.0.0.1:${OPEN_KLIPPAH_MCP_PORT:-9100}:9100"
     volumes:
-      - mcp_downloads:/app/supoclip-downloads
+      - mcp_downloads:/app/openklippah-downloads
     environment:
-      - SUPOCLIP_API_URL=${SUPOCLIP_API_URL:-http://backend:8000}
-      - SUPOCLIP_DOWNLOAD_DIR=/app/supoclip-downloads
-      - SUPOCLIP_TIMEOUT=${SUPOCLIP_TIMEOUT:-60}
-      - SUPOCLIP_MCP_TRANSPORT=${SUPOCLIP_MCP_TRANSPORT:-sse}
-      - SUPOCLIP_MCP_HOST=0.0.0.0
-      - SUPOCLIP_MCP_PORT=9100
-      - SUPOCLIP_MCP_PUBLIC_URL=${SUPOCLIP_MCP_PUBLIC_URL:-https://mcp.supoclip.com}
-      - SUPOCLIP_MCP_REQUIRE_BEARER_AUTH=${SUPOCLIP_MCP_REQUIRE_BEARER_AUTH:-true}
+      - OPEN_KLIPPAH_API_URL=${OPEN_KLIPPAH_API_URL:-http://backend:8000}
+      - OPEN_KLIPPAH_DOWNLOAD_DIR=/app/openklippah-downloads
+      - OPEN_KLIPPAH_TIMEOUT=${OPEN_KLIPPAH_TIMEOUT:-60}
+      - OPEN_KLIPPAH_MCP_TRANSPORT=${OPEN_KLIPPAH_MCP_TRANSPORT:-sse}
+      - OPEN_KLIPPAH_MCP_HOST=0.0.0.0
+      - OPEN_KLIPPAH_MCP_PORT=9100
+      - OPEN_KLIPPAH_MCP_PUBLIC_URL=${OPEN_KLIPPAH_MCP_PUBLIC_URL:-https://mcp.openklippah.com}
+      - OPEN_KLIPPAH_MCP_REQUIRE_BEARER_AUTH=${OPEN_KLIPPAH_MCP_REQUIRE_BEARER_AUTH:-true}
     restart: unless-stopped
     depends_on:
       backend:
@@ -239,7 +239,7 @@ services:
       dockerfile: Dockerfile
       args:
         BACKEND_CPU_ONLY: ${BACKEND_CPU_ONLY:-false}
-    container_name: supoclip-worker
+    container_name: openklippah-worker
     platform: linux/amd64
     command: [".venv/bin/arq", "src.workers.tasks.WorkerSettings"]
     volumes:
@@ -251,7 +251,7 @@ services:
     environment:
       - PYTHONPATH=/app
       - PYTHONUNBUFFERED=1
-      - DATABASE_URL=postgresql+asyncpg://supoclip:supoclip_password@postgres:5432/supoclip
+      - DATABASE_URL=postgresql+asyncpg://openklippah:openklippah_password@postgres:5432/openklippah
       - TEMP_DIR=/app/uploads
       - MEDIA_STORAGE=${MEDIA_STORAGE:-local}
       - MEDIA_S3_BUCKET=${MEDIA_S3_BUCKET:-}
@@ -317,7 +317,7 @@ services:
       - BACKEND_AUTH_SECRET=${BACKEND_AUTH_SECRET}
       - APP_SETTINGS_ENCRYPTION_KEY=${APP_SETTINGS_ENCRYPTION_KEY}
       - AUTH_SIGNATURE_TTL_SECONDS=${AUTH_SIGNATURE_TTL_SECONDS:-300}
-      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3107,http://sp.localhost:3107,http://supoclip.localhost:3107}
+      - CORS_ORIGINS=${CORS_ORIGINS:-http://localhost:3107,http://sp.localhost:3107,http://openklippah.localhost:3107}
       - FREE_PLAN_TASK_LIMIT=${FREE_PLAN_TASK_LIMIT:-10}
       - PRO_PLAN_TASK_LIMIT=${PRO_PLAN_TASK_LIMIT:-50}
       - SCALE_PLAN_TASK_LIMIT=${SCALE_PLAN_TASK_LIMIT:-300}
@@ -361,7 +361,7 @@ services:
   # Redis for caching and job queues (useful for video processing)
   redis:
     image: redis:7-alpine
-    container_name: supoclip-redis
+    container_name: openklippah-redis
     ports:
       - "127.0.0.1:6379:6379"
     environment:
@@ -388,17 +388,17 @@ services:
   # PostgreSQL database for storing video metadata, user data, etc.
   postgres:
     image: postgres:15-alpine
-    container_name: supoclip-postgres
+    container_name: openklippah-postgres
     environment:
-      POSTGRES_DB: supoclip
-      POSTGRES_USER: supoclip
-      POSTGRES_PASSWORD: supoclip_password
+      POSTGRES_DB: openklippah
+      POSTGRES_USER: openklippah
+      POSTGRES_PASSWORD: openklippah_password
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U supoclip -d supoclip"]
+      test: ["CMD-SHELL", "pg_isready -U openklippah -d openklippah"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -417,4 +417,4 @@ volumes:
 
 networks:
   default:
-    name: supoclip-network
+    name: openklippah-network

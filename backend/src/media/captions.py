@@ -82,7 +82,7 @@ def emoji_rendering_supported() -> bool:
 
     result = False
     try:
-        with tempfile.TemporaryDirectory(prefix="supoclip_emojiprobe_") as probe_dir:
+        with tempfile.TemporaryDirectory(prefix="openklippah_emojiprobe_") as probe_dir:
             root = Path(probe_dir)
             ass = root / "probe.ass"
             frame = root / "probe.png"

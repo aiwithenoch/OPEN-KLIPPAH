@@ -1,14 +1,14 @@
 """
 Thin async HTTP client for the Open Klippah backend API.
 
-Authentication is resolved from :class:`~supoclip_mcp.config.Settings` and
+Authentication is resolved from :class:`~openklippah_mcp.config.Settings` and
 supports three modes, tried in priority order:
 
 1. ``api_key``         -> ``Authorization: Bearer <key>`` (recommended; the
    default for the hosted service).
 2. ``signed_headers``  -> the frontend's HMAC scheme, when a user id and the
    backend auth secret are both provided (useful for self-hosting).
-3. ``unsigned_user_id`` -> a bare ``x-supoclip-user-id`` header, for a
+3. ``unsigned_user_id`` -> a bare ``x-openklippah-user-id`` header, for a
    self-hosted backend running with ``ALLOW_UNSIGNED_BACKEND_AUTH=true``.
 """
 
@@ -27,11 +27,11 @@ import httpx
 from .config import Settings
 
 
-class Open KlippahError(Exception):
+class OpenKlippahError(Exception):
     """A friendly, already-formatted error suitable for returning to the model."""
 
 
-class AuthNotConfiguredError(Open KlippahError):
+class AuthNotConfiguredError(OpenKlippahError):
     """Raised when an authenticated operation is attempted without credentials."""
 
 
@@ -40,13 +40,13 @@ def _signed_headers(user_id: str, secret: str) -> Dict[str, str]:
     payload = f"{user_id}:{timestamp}".encode("utf-8")
     signature = hmac.new(secret.encode("utf-8"), payload, hashlib.sha256).hexdigest()
     return {
-        "x-supoclip-user-id": user_id,
-        "x-supoclip-ts": timestamp,
-        "x-supoclip-signature": signature,
+        "x-openklippah-user-id": user_id,
+        "x-openklippah-ts": timestamp,
+        "x-openklippah-signature": signature,
     }
 
 
-class Open KlippahClient:
+class OpenKlippahClient:
     """Async client wrapping the Open Klippah REST API."""
 
     def __init__(self, settings: Settings):
@@ -60,15 +60,15 @@ class Open KlippahClient:
         if mode == "signed_headers":
             return _signed_headers(self.settings.user_id, self.settings.auth_secret)  # type: ignore[arg-type]
         if mode == "unsigned_user_id":
-            return {"x-supoclip-user-id": self.settings.user_id}  # type: ignore[dict-item]
+            return {"x-openklippah-user-id": self.settings.user_id}  # type: ignore[dict-item]
         return {}
 
     def _require_auth(self) -> None:
         if not self.settings.is_authenticated:
             raise AuthNotConfiguredError(
-                "No credentials configured. Set SUPOCLIP_API_KEY to a key created "
+                "No credentials configured. Set OPEN_KLIPPAH_API_KEY to a key created "
                 "in your Open Klippah account (Settings -> API Keys). For a self-hosted "
-                "backend you may instead set SUPOCLIP_USER_ID (+ SUPOCLIP_AUTH_SECRET "
+                "backend you may instead set OPEN_KLIPPAH_USER_ID (+ OPEN_KLIPPAH_AUTH_SECRET "
                 "if signing is enforced)."
             )
 
@@ -97,11 +97,11 @@ class Open KlippahClient:
                     method, url, params=params, json=json_body, headers=headers
                 )
         except httpx.TimeoutException as exc:
-            raise Open KlippahError(
+            raise OpenKlippahError(
                 f"Request to {path} timed out after {self.settings.timeout:g}s."
             ) from exc
         except httpx.HTTPError as exc:
-            raise Open KlippahError(f"Could not reach Open Klippah at {url}: {exc}") from exc
+            raise OpenKlippahError(f"Could not reach Open Klippah at {url}: {exc}") from exc
 
         return self._parse(response, path)
 
@@ -133,12 +133,12 @@ class Open KlippahClient:
                         if response.is_redirect:
                             location = response.headers.get("location")
                             if not location:
-                                raise Open KlippahError("Download redirect has no destination.")
+                                raise OpenKlippahError("Download redirect has no destination.")
                             download_url = urljoin(download_url, location)
                             target = urlsplit(download_url)
                             same_backend = target[:2] == backend_origin
                             if target.scheme not in {"http", "https"} or (not same_backend and target.scheme != "https"):
-                                raise Open KlippahError("Download redirect must use HTTPS for external storage.")
+                                raise OpenKlippahError("Download redirect must use HTTPS for external storage.")
                             # HTTP clients do not automatically strip custom HMAC
                             # headers on a cross-origin redirect. Send no backend
                             # credentials to storage; the URL carries its own grant.
@@ -147,9 +147,9 @@ class Open KlippahClient:
                             continue
                         if response.status_code not in {200, 206}:
                             if urlsplit(download_url)[:2] != backend_origin:
-                                raise Open KlippahError(f"Storage download failed ({response.status_code}). Please retry.")
+                                raise OpenKlippahError(f"Storage download failed ({response.status_code}). Please retry.")
                             body = (await response.aread()).decode("utf-8", "replace")
-                            raise Open KlippahError(_error_message(response.status_code, body, path))
+                            raise OpenKlippahError(_error_message(response.status_code, body, path))
                         with temporary.open("wb") as handle:
                             async for chunk in response.aiter_bytes(chunk_size=1 << 16):
                                 handle.write(chunk)
@@ -157,11 +157,11 @@ class Open KlippahClient:
                         temporary.replace(dest_path)
                         break
                 else:
-                    raise Open KlippahError("Download redirected too many times.")
+                    raise OpenKlippahError("Download redirected too many times.")
         except httpx.HTTPError as exc:
             # Exceptions may contain signed storage URLs. Keep them out of the
             # user-visible error while retaining the exception type for support.
-            raise Open KlippahError(f"Download from {path} failed ({type(exc).__name__}).") from exc
+            raise OpenKlippahError(f"Download from {path} failed ({type(exc).__name__}).") from exc
         finally:
             temporary.unlink(missing_ok=True)
 
@@ -175,7 +175,7 @@ class Open KlippahClient:
     @staticmethod
     def _parse(response: httpx.Response, path: str) -> Any:
         if response.status_code >= 400:
-            raise Open KlippahError(
+            raise OpenKlippahError(
                 _error_message(response.status_code, response.text, path)
             )
         if not response.content:
@@ -199,7 +199,7 @@ def _error_message(status: int, body: str, path: str) -> str:
 
     if status == 401:
         return (
-            "Authentication failed (401). Check SUPOCLIP_API_KEY is valid and not "
+            "Authentication failed (401). Check OPEN_KLIPPAH_API_KEY is valid and not "
             f"revoked. Backend said: {detail}"
         )
     if status == 402:

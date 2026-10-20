@@ -35,7 +35,7 @@ it("keeps the update accessible after reading and remembers it on another surfac
 });
 
 it("shows new announcements even when an older update has been read", async () => {
-  window.localStorage.setItem("supoclip:announcements-read:visitor", '["older-update"]');
+  window.localStorage.setItem("openklippah:announcements-read:visitor", '["older-update"]');
   render(<Announcements landing />);
   expect(await screen.findByRole("button", { name: "What's new, 1 unread announcement" })).toBeVisible();
 });

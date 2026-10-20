@@ -297,7 +297,7 @@ export function Inspector({
                   onClick={() => {
                     try {
                       localStorage.setItem(
-                        "supoclip-caption-style",
+                        "openklippah-caption-style",
                         JSON.stringify(doc.captions),
                       );
                       toast.success("Caption style saved");
@@ -315,7 +315,7 @@ export function Inspector({
                   onClick={() => {
                     try {
                       const style = JSON.parse(
-                        localStorage.getItem("supoclip-caption-style") ||
+                        localStorage.getItem("openklippah-caption-style") ||
                           "null",
                       );
                       if (style?.font && style?.size) caption(style);

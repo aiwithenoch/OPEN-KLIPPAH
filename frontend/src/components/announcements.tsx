@@ -8,7 +8,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { useAnnouncements } from "@/hooks/use-announcements";
 import { cn } from "@/lib/utils";
 
-const READ_EVENT = "supoclip:announcements-read";
+const READ_EVENT = "openklippah:announcements-read";
 const memoryRead = new Map<string, string[]>();
 
 function readIds(key: string): string[] {
@@ -27,7 +27,7 @@ export function Announcements({ userId, compact = false, landing = false }: {
   compact?: boolean;
   landing?: boolean;
 }) {
-  const key = `supoclip:announcements-read:${userId ?? "visitor"}`;
+  const key = `openklippah:announcements-read:${userId ?? "visitor"}`;
   const [read, setRead] = useState<{ key: string; ids: string[] } | null>(null);
   const [open, setOpen] = useState(false);
   const announcements = useAnnouncements();

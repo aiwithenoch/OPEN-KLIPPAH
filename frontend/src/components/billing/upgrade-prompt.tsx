@@ -222,7 +222,7 @@ export function UpgradeDialog({ open, onOpenChange, reason, billing, source }: U
                 Setup required; you provide the hardware and any paid AI services you choose.
               </p>
               <Link
-                href="/blog/self-host-supoclip-docker"
+                href="/blog/self-host-openklippah-docker"
                 className="mt-3 inline-flex items-center gap-1 text-sm font-medium underline underline-offset-4 hover:text-muted-foreground"
               >
                 Self-hosting guide <ArrowRight className="size-3.5" />

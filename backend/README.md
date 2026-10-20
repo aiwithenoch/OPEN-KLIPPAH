@@ -41,8 +41,8 @@ uv sync --all-groups
 Run the backend suite:
 
 ```bash
-DATABASE_URL=postgresql+asyncpg://localhost:5432/supoclip \
-TEST_DATABASE_URL=postgresql+asyncpg://localhost:5432/supoclip \
+DATABASE_URL=postgresql+asyncpg://localhost:5432/openklippah \
+TEST_DATABASE_URL=postgresql+asyncpg://localhost:5432/openklippah \
 REDIS_HOST=127.0.0.1 \
 REDIS_PORT=6379 \
 .venv/bin/pytest

@@ -50,7 +50,7 @@ export function SelfHostingGuideArticle({ post }: { post: BlogPost }) {
   return (
     <ArticleShell post={post} breadcrumb="Self-host Open Klippah" toc={toc} faqs={faqs}>
       <p>
-        Open Klippah is the open-source AI video clipper behind the hosted app at supoclip.com. The same repository
+        Open Klippah is the open-source AI video clipper behind the hosted app at openklippah.com. The same repository
         ships a Docker Compose stack you can run on a laptop, a home server, or a VPS. This guide follows that stack
         exactly as it exists in the <a href={GITHUB_URL}>repository</a>. Where a step depends on your provider or
         hardware, we say so instead of guessing.
@@ -263,7 +263,7 @@ docker compose logs -f worker           # watch a job move through the pipeline
           <code>CORS_ORIGINS</code>. <code>NEXT_PUBLIC_*</code> values are baked in at build time, so rebuild the frontend after changing them.
         </li>
         <li>
-          <strong>Change the database password.</strong> <code>docker-compose.yml</code> hardcodes <code>supoclip_password</code> in
+          <strong>Change the database password.</strong> <code>docker-compose.yml</code> hardcodes <code>openklippah_password</code> in
           four places: <code>POSTGRES_PASSWORD</code> in the <code>postgres</code> service and <code>DATABASE_URL</code> in the{" "}
           <code>frontend</code>, <code>backend</code>, and <code>worker</code> services. Editing <code>POSTGRES_PASSWORD</code> in{" "}
           <code>.env</code> alone changes none of them. Override all four, as shown below.
@@ -292,13 +292,13 @@ services:
       POSTGRES_PASSWORD: \${POSTGRES_PASSWORD}
   frontend:
     environment:
-      DATABASE_URL: postgresql://supoclip:\${POSTGRES_PASSWORD}@postgres:5432/supoclip
+      DATABASE_URL: postgresql://openklippah:\${POSTGRES_PASSWORD}@postgres:5432/openklippah
   backend:
     environment:
-      DATABASE_URL: postgresql+asyncpg://supoclip:\${POSTGRES_PASSWORD}@postgres:5432/supoclip
+      DATABASE_URL: postgresql+asyncpg://openklippah:\${POSTGRES_PASSWORD}@postgres:5432/openklippah
   worker:
     environment:
-      DATABASE_URL: postgresql+asyncpg://supoclip:\${POSTGRES_PASSWORD}@postgres:5432/supoclip
+      DATABASE_URL: postgresql+asyncpg://openklippah:\${POSTGRES_PASSWORD}@postgres:5432/openklippah
 `}</CodeBlock>
       <p>
         Postgres reads <code>POSTGRES_PASSWORD</code> only when it initializes an empty data volume. On an install that already
@@ -306,8 +306,8 @@ services:
         the same value as in <code>.env</code>. Then recreate the services so they use the new URLs:
       </p>
       <CodeBlock label="terminal (existing database)">{`
-docker compose exec -T postgres psql -U supoclip -d supoclip \\
-  -c "ALTER USER supoclip PASSWORD 'your_new_password'"
+docker compose exec -T postgres psql -U openklippah -d openklippah \\
+  -c "ALTER USER openklippah PASSWORD 'your_new_password'"
 docker compose up -d
 `}</CodeBlock>
       <p>
@@ -324,7 +324,7 @@ docker compose up -d
         code early. The development frontend hot-reloads mounted source.
       </p>
       <CodeBlock label="terminal">{`
-docker compose exec -T postgres pg_dump -U supoclip supoclip > supoclip-$(date +%F).sql
+docker compose exec -T postgres pg_dump -U openklippah openklippah > openklippah-$(date +%F).sql
 docker compose stop frontend backend worker
 old=$(git rev-parse HEAD)
 git pull
@@ -336,7 +336,7 @@ git diff --name-only --diff-filter=A "$old" HEAD -- \\
         migrations in number order:
       </p>
       <CodeBlock label="terminal">{`
-docker compose exec -T postgres psql -U supoclip -d supoclip -v ON_ERROR_STOP=1 -1 \\
+docker compose exec -T postgres psql -U openklippah -d openklippah -v ON_ERROR_STOP=1 -1 \\
   < frontend/prisma/migrations/<new_migration>/migration.sql
 docker compose up -d --build
 `}</CodeBlock>
