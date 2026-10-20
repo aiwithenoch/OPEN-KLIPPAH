@@ -52,3 +52,10 @@
 - Verification: bundled Python `compileall` passed for `backend/src`, `backend/tests`, `mcp/src`, `mcp/tests`, and `scripts`; `git diff --check` passed; tracked source and paths contain no case-insensitive `supoclip` references outside the preserved changelog and license. Frontend lint, typecheck, full Vitest, and production build had already passed after the full cleanup; the one email-deliveries timeout passed when rerun alone.
 - Limitation: `mcp/tests/test_client_download.py` could not run because the bundled Python environment does not include `pytest`; no dependency installation was performed.
 - Current state: cleanup is syntactically valid and ready for final review, commit, and non-force push to the configured Open Klippah origin.
+
+## 2026-10-20T21:00:46+00:00 — Published Open Klippah cleanup
+
+- Objective: publish the completed Open Klippah customization to the requested GitHub repository.
+- Commands: committed as `4b99cb9` with `git commit -m "Remove upstream SupoClip identifiers"`; pushed with `GIT_TERMINAL_PROMPT=0 git push --progress -u origin main`; verified with `git ls-remote --heads origin main`.
+- Result: local `HEAD` and remote `origin/main` both resolve to `4b99cb9be8c9e4009fd9309b7f979e9efca04ffe`; the worktree is clean and tracks `origin/main`.
+- Deferred: the `openklippah.com`/API/MCP hostnames remain provisional until a production domain is chosen. The historical changelog and Git ancestry retain upstream provenance for licensing/auditability; runtime and tracked working-tree branding do not.
