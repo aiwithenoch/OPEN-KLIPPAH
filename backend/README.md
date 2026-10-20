@@ -65,7 +65,7 @@ Set these env vars when using hosted billing:
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_aws_access_key_id
 AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-SES_FROM_EMAIL="SupoClip <onboarding@example.com>"
+SES_FROM_EMAIL="Open Klippah <onboarding@example.com>"
 ```
 
 Notes:
@@ -100,7 +100,7 @@ Notes:
 - `yt_dlp` is the free default and does not require `APIFY_API_TOKEN`.
 - If `yt-dlp` fails and both `APIFY_API_TOKEN` and an explicit worker are configured, the backend can try Apify as a fallback.
 - If Apify is selected but unavailable or fails, the backend falls back to `yt-dlp`.
-- `APIFY_RUN_TIMEOUT_SECONDS` caps the Apify actor run time before SupoClip gives up.
+- `APIFY_RUN_TIMEOUT_SECONDS` caps the Apify actor run time before Open Klippah gives up.
 
 For an ordered verified provider pool and private S3 delivery, configure
 `APIFY_YOUTUBE_PROVIDERS` and the related private settings documented in

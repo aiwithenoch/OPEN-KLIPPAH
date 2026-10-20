@@ -28,13 +28,13 @@ This guide covers the recommended Docker setup, local development mode, and the 
 
 ## Recommended Setup: Docker
 
-Docker is the intended path for running SupoClip because it starts the frontend, backend, worker, PostgreSQL, and Redis together with the expected wiring.
+Docker is the intended path for running Open Klippah because it starts the frontend, backend, worker, PostgreSQL, and Redis together with the expected wiring.
 
 ### 1. Clone the repository
 
 ```bash
 git clone <your-repo-url>
-cd supoclip
+cd open-klippah
 ```
 
 ### 2. Create a local environment file
@@ -193,7 +193,7 @@ pnpm run dev
 
 ## Data and Volumes
 
-With Docker, SupoClip stores persistent data in named volumes:
+With Docker, Open Klippah stores persistent data in named volumes:
 
 - `postgres_data`
 - `redis_data`
@@ -207,7 +207,7 @@ The backend also mounts these local directories:
 
 ## Hosted Mode Versus Self-Hosted Mode
 
-SupoClip defaults to self-host mode:
+Open Klippah defaults to self-host mode:
 
 ```env
 SELF_HOST=true

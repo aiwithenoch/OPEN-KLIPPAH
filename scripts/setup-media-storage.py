@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Create SupoClip's private media bucket and a bucket-scoped runtime identity.
+"""Create Open Klippah's private media bucket and a bucket-scoped runtime identity.
 
 Run with backend/.venv/bin/python. Administrative access comes from aws login;
 runtime keys are written only to the requested private file, never stdout.
@@ -66,11 +66,11 @@ def main():
         "AbortIncompleteMultipartUpload": {"DaysAfterInitiation": 1}}]})
     iam = session.client("iam")
     try:
-        iam.create_user(UserName=args.iam_user, Tags=[{"Key": "Application", "Value": "SupoClip"}])
+        iam.create_user(UserName=args.iam_user, Tags=[{"Key": "Application", "Value": "Open Klippah"}])
     except ClientError as exc:
         if exc.response["Error"]["Code"] != "EntityAlreadyExists":
             raise
-    iam.put_user_policy(UserName=args.iam_user, PolicyName="SupoClipMediaOnly", PolicyDocument=json.dumps({
+    iam.put_user_policy(UserName=args.iam_user, PolicyName="Open KlippahMediaOnly", PolicyDocument=json.dumps({
         "Version": "2012-10-17", "Statement": [
             {"Effect": "Allow", "Action": "s3:GetBucketLocation", "Resource": arn},
             {"Effect": "Allow", "Action": "s3:ListBucket", "Resource": arn,

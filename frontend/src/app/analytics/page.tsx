@@ -138,7 +138,7 @@ export default function AnalyticsPage() {
       <div className="mb-8">
         <h1 className="font-display text-3xl font-bold tracking-tight">Analytics</h1>
         <p className="mt-2 text-muted-foreground">
-          How your published clips perform. SupoClip pulls views, likes and comments back from each
+          How your published clips perform. Open Klippah pulls views, likes and comments back from each
           platform and uses them to steer future clip selection toward what works for your audience.
         </p>
       </div>

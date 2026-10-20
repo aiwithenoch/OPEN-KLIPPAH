@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-SupoClip is an open-source alternative to OpusClip — an AI-powered video clipping tool that transforms long-form content into viral short clips. AGPL-3.0 licensed.
+Open Klippah is an open-source alternative to OpusClip — an AI-powered video clipping tool that transforms long-form content into viral short clips. AGPL-3.0 licensed.
 
 ## Development Commands
 
@@ -297,7 +297,7 @@ environment configuration. See `backend/README.md` for setup.
 ## MCP Server
 
 `mcp/` is a standalone [MCP](https://modelcontextprotocol.io) server
-(`supoclip-mcp`, Python/FastMCP, stdio) that exposes SupoClip to MCP clients
+(`supoclip-mcp`, Python/FastMCP, stdio) that exposes Open Klippah to MCP clients
 (Claude Desktop/Code, Cursor, …). It is a thin client over the REST API.
 
 - **Default target:** the hosted API `https://api.supoclip.com`. Override with

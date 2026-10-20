@@ -65,19 +65,19 @@ const faqs = [
     icon: Sparkles,
     question: "What is the best free OpusClip alternative?",
     answer:
-      "SupoClip is a strong free OpusClip alternative if you want an open-source AI clip maker that you can self-host, customize, and run with your own video workflow.",
+      "Open Klippah is a strong free OpusClip alternative if you want an open-source AI clip maker that you can self-host, customize, and run with your own video workflow.",
   },
   {
     icon: ShieldCheck,
-    question: "Is SupoClip completely free?",
+    question: "Is Open Klippah completely free?",
     answer:
-      "The SupoClip codebase is free and open source, and self-hosted installs have no plan limits. You still pay for your own infrastructure and any transcription or LLM provider you configure. The hosted app requires a paid plan.",
+      "The Open Klippah codebase is free and open source, and self-hosted installs have no plan limits. You still pay for your own infrastructure and any transcription or LLM provider you configure. The hosted app requires a paid plan.",
   },
   {
     icon: Captions,
-    question: "Does SupoClip add a watermark?",
+    question: "Does Open Klippah add a watermark?",
     answer:
-      "No. SupoClip's rendering pipeline has no watermark step, whether you use the hosted app or a self-hosted install.",
+      "No. Open Klippah's rendering pipeline has no watermark step, whether you use the hosted app or a self-hosted install.",
   },
 ];
 
@@ -132,7 +132,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     },
     publisher: {
       "@type": "Organization",
-      name: "SupoClip",
+      name: "Open Klippah",
       logo: {
         "@type": "ImageObject",
         url: `${siteUrl}/logo.png`,
@@ -167,12 +167,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <header className="border-b bg-background/95">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="SupoClip" width={24} height={24} className="rounded-lg" />
+            <Image src="/logo.png" alt="Open Klippah" width={24} height={24} className="rounded-lg" />
             <span
               className="text-lg font-bold tracking-tight"
               style={{ fontFamily: "var(--font-syne), var(--font-geist-sans), system-ui" }}
             >
-              SupoClip
+              Open Klippah
             </span>
           </Link>
           <div className="flex items-center gap-2">
@@ -206,7 +206,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
                   <Badge variant="outline" className="gap-2">
                     <Play className="h-3.5 w-3.5" />
-                    Try hosted SupoClip
+                    Try hosted Open Klippah
                   </Badge>
                 </a>
               </div>
@@ -217,7 +217,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 {post.title}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-muted-foreground">
-                If you like the idea of OpusClip but want a free, open-source path, SupoClip gives
+                If you like the idea of OpusClip but want a free, open-source path, Open Klippah gives
                 you the core workflow: find strong moments in long videos, reframe them vertically,
                 add captions, and export clips for Shorts, Reels, and TikTok.
               </p>
@@ -266,12 +266,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               </p>
 
               <p>
-                SupoClip is the best free OpusClip alternative for that specific creator: someone
+                Open Klippah is the best free OpusClip alternative for that specific creator: someone
                 who wants AI-assisted clip discovery, vertical exports, captions, and control over
                 the underlying system. You can also
                 {" "}
                 <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
-                  use hosted SupoClip
+                  use hosted Open Klippah
                 </a>
                 {" "}
                 on a paid plan if you want to skip setup entirely.
@@ -279,7 +279,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
               <h2 id="quick-verdict">Quick Verdict</h2>
               <p>
-                Choose SupoClip if you want an open-source AI video clipper you can self-host.
+                Choose Open Klippah if you want an open-source AI video clipper you can self-host.
                 Choose OpusClip if you want a managed hosted product and are comfortable with its
                 plan limits, watermark rules, and credit model.
               </p>
@@ -314,9 +314,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 workflow.
               </p>
 
-              <h2>What Makes SupoClip Different</h2>
+              <h2>What Makes Open Klippah Different</h2>
               <p>
-                SupoClip is not just a thin wrapper around a hosted editor. It is a complete
+                Open Klippah is not just a thin wrapper around a hosted editor. It is a complete
                 open-source clipping app with a FastAPI backend, a Next.js frontend, background
                 workers, transcription, AI scoring, face-aware vertical reframing, caption styling,
                 and export presets.
@@ -329,17 +329,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 walks through the setup, including a fully local Whisper + Ollama option.
               </p>
 
-              <h2 id="supoclip-vs-opusclip">SupoClip vs OpusClip</h2>
+              <h2 id="supoclip-vs-opusclip">Open Klippah vs OpusClip</h2>
               <p>
                 The summary below covers the essentials. For a row-by-row comparison with a source
-                for every claim, read <Link href={OPUSCLIP_COMPARISON_HREF}>SupoClip vs OpusClip: a sourced comparison</Link>.
+                for every claim, read <Link href={OPUSCLIP_COMPARISON_HREF}>Open Klippah vs OpusClip: a sourced comparison</Link>.
               </p>
             </div>
 
             <div className="my-8 overflow-hidden rounded-lg border">
               <div className="grid grid-cols-[0.85fr_1fr_1fr] bg-muted/50 text-sm font-semibold">
                 <div className="p-4">Feature</div>
-                <div className="border-l p-4">SupoClip</div>
+                <div className="border-l p-4">Open Klippah</div>
                 <div className="border-l p-4">OpusClip</div>
               </div>
               {comparisonRows.map(({ icon: Icon, ...row }) => (
@@ -355,18 +355,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             <div className={articleBodyClassName}>
-              <h2>How SupoClip Works</h2>
+              <h2>How Open Klippah Works</h2>
               <ol>
                 <li>Paste a YouTube URL or upload a video.</li>
-                <li>SupoClip transcribes the source and finds candidate moments.</li>
+                <li>Open Klippah transcribes the source and finds candidate moments.</li>
                 <li>AI scores clips for hook strength, engagement, value, and shareability.</li>
                 <li>The editor creates vertical, captioned clips with face-aware framing.</li>
                 <li>You export shorts for YouTube Shorts, TikTok, Instagram Reels, or other feeds.</li>
               </ol>
 
-              <h2>When SupoClip Is the Better Choice</h2>
+              <h2>When Open Klippah Is the Better Choice</h2>
               <p>
-                SupoClip is best when you want a free OpusClip alternative with developer control.
+                Open Klippah is best when you want a free OpusClip alternative with developer control.
                 It is especially useful for creators with a backlog of long videos, agencies that
                 want to customize clipping workflows, or technical teams that want AI video
                 clipping inside their own stack.
@@ -392,7 +392,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     className="mt-2 text-2xl font-bold tracking-tight"
                     style={{ fontFamily: "var(--font-syne), var(--font-geist-sans), system-ui" }}
                   >
-                    Start clipping with SupoClip.
+                    Start clipping with Open Klippah.
                   </h2>
                 </div>
                 <div className="flex flex-wrap gap-3">
@@ -405,7 +405,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                       <ArrowRight className="h-4 w-4" />
                     </Button>
                   </Link>
-                  <a href="https://github.com/FujiwaraChoki/supoclip" target="_blank" rel="noopener noreferrer">
+                  <a href="https://github.com/aiwithenoch/OPEN-KLIPPAH" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" className="border-background/30 bg-transparent text-background hover:bg-background hover:text-foreground">
                       <Github className="h-4 w-4" />
                       GitHub
@@ -433,7 +433,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <Separator className="my-10" />
 
-            <RelatedGuides href={`/blog/${post.slug}`} heading="Related SupoClip guides" />
+            <RelatedGuides href={`/blog/${post.slug}`} heading="Related Open Klippah guides" />
 
             <Separator className="my-10" />
 
@@ -478,7 +478,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <ShieldCheck className="h-5 w-5 text-green-600" />
                 <p className="mt-3 text-sm font-semibold">Open-source control</p>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground">
-                  Use SupoClip when you want the clipping workflow without handing every decision
+                  Use Open Klippah when you want the clipping workflow without handing every decision
                   to a hosted platform.
                 </p>
               </div>

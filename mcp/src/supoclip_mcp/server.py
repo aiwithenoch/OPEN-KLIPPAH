@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-MCP server for SupoClip — an AI tool that turns long-form videos into short,
+MCP server for Open Klippah — an AI tool that turns long-form videos into short,
 vertical, subtitled viral clips.
 
-The server talks to the SupoClip REST API. By default it targets the official
+The server talks to the Open Klippah REST API. By default it targets the official
 hosted instance at ``https://api.supoclip.com``; set ``SUPOCLIP_API_URL`` to
-use a self-hosted backend. Authenticate by creating an API key in your SupoClip
+use a self-hosted backend. Authenticate by creating an API key in your Open Klippah
 account and exposing it as ``SUPOCLIP_API_KEY``.
 
 Typical workflow:
@@ -38,15 +38,15 @@ try:  # Python 3.10 lacks typing.Literal niceties only in edge cases; import is 
 except ImportError:  # pragma: no cover
     from typing_extensions import Literal  # type: ignore
 
-from .client import AuthNotConfiguredError, SupoClipClient, SupoClipError
+from .client import AuthNotConfiguredError, Open KlippahClient, Open KlippahError
 from .config import load_settings
 
 SETTINGS = load_settings()
-CLIENT = SupoClipClient(SETTINGS)
+CLIENT = Open KlippahClient(SETTINGS)
 
 
-class SupoClipApiKeyVerifier:
-    """Validate MCP Bearer tokens against the configured SupoClip backend."""
+class Open KlippahApiKeyVerifier:
+    """Validate MCP Bearer tokens against the configured Open Klippah backend."""
 
     def __init__(self, api_url: str, timeout: float) -> None:
         self.api_url = api_url.rstrip("/")
@@ -101,7 +101,7 @@ def _build_mcp() -> FastMCP:
             resource_server_url=public_url,
             required_scopes=["supoclip"],
         )
-        token_verifier = SupoClipApiKeyVerifier(SETTINGS.api_url, SETTINGS.timeout)
+        token_verifier = Open KlippahApiKeyVerifier(SETTINGS.api_url, SETTINGS.timeout)
 
     return FastMCP(
         "supoclip_mcp",
@@ -128,10 +128,10 @@ def _json(data: object) -> str:
     return json.dumps(data, indent=2, default=str, ensure_ascii=False)
 
 
-def _client() -> SupoClipClient:
+def _client() -> Open KlippahClient:
     access_token = get_access_token()
     if access_token and access_token.token:
-        return SupoClipClient(
+        return Open KlippahClient(
             replace(
                 SETTINGS,
                 api_key=access_token.token,
@@ -151,7 +151,7 @@ def tool_errors(func: Callable[..., Awaitable[str]]) -> Callable[..., Awaitable[
             return await func(*args, **kwargs)
         except AuthNotConfiguredError as exc:
             return f"Error: {exc}"
-        except SupoClipError as exc:
+        except Open KlippahError as exc:
             return f"Error: {exc}"
         except Exception as exc:  # pragma: no cover - defensive
             return f"Error: unexpected {type(exc).__name__}: {exc}"
@@ -174,7 +174,7 @@ def _safe_filename(name: str, default: str) -> str:
 @mcp.tool(
     name="supoclip_health",
     annotations={
-        "title": "SupoClip Health & Config",
+        "title": "Open Klippah Health & Config",
         "readOnlyHint": True,
         "destructiveHint": False,
         "idempotentHint": True,
@@ -183,7 +183,7 @@ def _safe_filename(name: str, default: str) -> str:
 )
 @tool_errors
 async def supoclip_health() -> str:
-    """Report SupoClip API status and how this MCP server is configured.
+    """Report Open Klippah API status and how this MCP server is configured.
 
     Use this first to confirm connectivity and that credentials are set up. It
     requires no authentication and reveals no secrets.
@@ -362,7 +362,7 @@ async def supoclip_create_clip_task(
     cut_long_pauses: bool = True,
     remove_filler_words: bool = True,
 ) -> str:
-    """Create a SupoClip task that downloads a video and generates viral short clips.
+    """Create a Open Klippah task that downloads a video and generates viral short clips.
 
     Processing is asynchronous: this returns immediately with a ``task_id``.
     Track progress with ``supoclip_wait_for_task`` or ``supoclip_get_task``, then
@@ -388,7 +388,7 @@ async def supoclip_create_clip_task(
     """
     cleaned_url = (url or "").strip()
     if len(cleaned_url) < 4:
-        raise SupoClipError("url is required. Pass a YouTube URL or direct video URL.")
+        raise Open KlippahError("url is required. Pass a YouTube URL or direct video URL.")
 
     normalized_mode = processing_mode if processing_mode in {"fast", "balanced", "quality"} else "fast"
     normalized_format = output_format if output_format in VALID_OUTPUT_FORMATS else "vertical"
@@ -438,7 +438,7 @@ async def supoclip_create_clip_task(
 )
 @tool_errors
 async def supoclip_create_clip(url: str = "") -> str:
-    """Create a SupoClip task from a YouTube or direct video URL.
+    """Create a Open Klippah task from a YouTube or direct video URL.
 
     This is a compatibility alias for clients that fail to pass arguments to
     the richer ``supoclip_create_clip_task`` tool. Pass the video URL in the

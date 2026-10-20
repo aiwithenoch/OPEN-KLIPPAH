@@ -9,18 +9,18 @@ const LAST_UPDATED = "October 16, 2026";
 const CONTACT_EMAIL = "privacy@supoclip.com";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | SupoClip",
+  title: "Privacy Policy | Open Klippah",
   description:
-    "How SupoClip collects, uses, shares, and protects your data when you use the SupoClip video-clipping service.",
+    "How Open Klippah collects, uses, shares, and protects your data when you use the Open Klippah video-clipping service.",
   alternates: {
     canonical: `${getSiteUrl()}/privacy`,
   },
   openGraph: {
-    title: "SupoClip Privacy Policy",
-    description: "How SupoClip handles your data.",
+    title: "Open Klippah Privacy Policy",
+    description: "How Open Klippah handles your data.",
     type: "website",
     url: `${getSiteUrl()}/privacy`,
-    siteName: "SupoClip",
+    siteName: "Open Klippah",
   },
 };
 
@@ -44,12 +44,12 @@ export default function PrivacyPolicyPage() {
       <header className="border-b bg-background/95">
         <div className="mx-auto flex h-16 max-w-3xl items-center justify-between px-6">
           <Link href="/" className="flex items-center gap-2.5">
-            <Image src="/logo.png" alt="SupoClip" width={24} height={24} className="rounded-lg" />
+            <Image src="/logo.png" alt="Open Klippah" width={24} height={24} className="rounded-lg" />
             <span
               className="text-lg font-bold tracking-tight"
               style={{ fontFamily: "var(--font-syne), var(--font-geist-sans), system-ui" }}
             >
-              SupoClip
+              Open Klippah
             </span>
           </Link>
           <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
@@ -75,16 +75,16 @@ export default function PrivacyPolicyPage() {
         <div className="mt-12 space-y-10">
           <Section title="Overview">
             <p>
-              This Privacy Policy explains how SupoClip (&ldquo;SupoClip,&rdquo; &ldquo;we,&rdquo;
+              This Privacy Policy explains how Open Klippah (&ldquo;Open Klippah,&rdquo; &ldquo;we,&rdquo;
               &ldquo;us&rdquo;) collects, uses, shares, and protects information when you use the
-              SupoClip apps and hosted service (the &ldquo;Service&rdquo;), which turn long-form
+              Open Klippah apps and hosted service (the &ldquo;Service&rdquo;), which turn long-form
               videos into short, captioned clips.
             </p>
             <p>
-              SupoClip is also available as open-source software you can self-host. If you use a
+              Open Klippah is also available as open-source software you can self-host. If you use a
               self-hosted instance operated by you or a third party, that operator&mdash;not
-              SupoClip&mdash;is responsible for the data processed by that instance. This policy
-              describes the SupoClip-operated hosted service.
+              Open Klippah&mdash;is responsible for the data processed by that instance. This policy
+              describes the Open Klippah-operated hosted service.
             </p>
           </Section>
 
@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
               The first account to sign in on that browser claims the record, and it is then deleted
               from the browser so no other account can use it. If that account is new, we save the
               record to it once, shortly after sign-up. We also note when you first download or export a clip. We use this to learn
-              which channels bring people who find SupoClip useful. If analytics are enabled, the
+              which channels bring people who find Open Klippah useful. If analytics are enabled, the
               sign-up and clip-export events we send to our analytics provider include the same
               campaign fields. We don&apos;t use this information for advertising or sell it. You can
               remove the record from your browser by clearing site data for supoclip.com.
@@ -151,7 +151,7 @@ export default function PrivacyPolicyPage() {
 
           <Section title="Connected Social Accounts" id="connected-accounts">
             <p>
-              You can connect a YouTube, TikTok, or Instagram account so SupoClip can publish clips
+              You can connect a YouTube, TikTok, or Instagram account so Open Klippah can publish clips
               for you. Connecting is optional, happens through the platform&apos;s own sign-in page,
               and we never see your password for that platform.
             </p>
@@ -167,7 +167,7 @@ export default function PrivacyPolicyPage() {
                 We never post anything you didn&apos;t ask us to.
               </li>
               <li>
-                <span className="text-foreground">Statistics for posts made through SupoClip</span>{" "}
+                <span className="text-foreground">Statistics for posts made through Open Klippah</span>{" "}
                 (views, likes, comments, shares) &mdash; to show you how your clips perform and, once
                 you have enough results, to tailor clip selection for your own future videos.
               </li>
@@ -181,9 +181,9 @@ export default function PrivacyPolicyPage() {
             <p>
               You can disconnect an account at any time from the Social page. Disconnecting deletes
               the stored tokens immediately, cancels any posts still scheduled for that account, and
-              asks the platform to revoke SupoClip&apos;s access where it supports that. You can
+              asks the platform to revoke Open Klippah&apos;s access where it supports that. You can
               also remove records of published posts, including their statistics, from the app.
-              Deleting your SupoClip account removes all of this data. You can also revoke access
+              Deleting your Open Klippah account removes all of this data. You can also revoke access
               from the platform itself, for Google at{" "}
               <a
                 className="text-foreground underline"
@@ -198,7 +198,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="font-medium text-foreground">YouTube and Google.</p>
             <p>
-              SupoClip uses YouTube API Services. By connecting a YouTube account you agree to the{" "}
+              Open Klippah uses YouTube API Services. By connecting a YouTube account you agree to the{" "}
               <a className="text-foreground underline" href="https://www.youtube.com/t/terms" target="_blank" rel="noreferrer">
                 YouTube Terms of Service
               </a>
@@ -206,7 +206,7 @@ export default function PrivacyPolicyPage() {
               <a className="text-foreground underline" href="https://policies.google.com/privacy" target="_blank" rel="noreferrer">
                 Google Privacy Policy
               </a>
-              . SupoClip&apos;s use and transfer to any other app of information received from
+              . Open Klippah&apos;s use and transfer to any other app of information received from
               Google APIs will adhere to the{" "}
               <a
                 className="text-foreground underline"
@@ -309,7 +309,7 @@ export default function PrivacyPolicyPage() {
 
         <div className="mt-14 border-t pt-8 text-sm text-muted-foreground">
           <Link href="/" className="underline hover:text-foreground">
-            Back to SupoClip
+            Back to Open Klippah
           </Link>
         </div>
       </article>

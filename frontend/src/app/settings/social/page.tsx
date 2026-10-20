@@ -164,7 +164,7 @@ function SocialSettingsContent() {
         <h1 className="font-display text-3xl font-bold tracking-tight">Social accounts</h1>
         <p className="mt-2 text-muted-foreground">
           Connect the accounts you post to. Publish clips straight from a task page, schedule
-          them, and let SupoClip learn from how they perform.
+          them, and let Open Klippah learn from how they perform.
         </p>
       </div>
 

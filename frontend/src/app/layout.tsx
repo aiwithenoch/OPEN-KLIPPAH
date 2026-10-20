@@ -32,16 +32,16 @@ const isDataFastEnabled = Boolean(dataFastWebsiteId && dataFastDomain);
 
 export const metadata: Metadata = {
   title: {
-    default: "SupoClip – Open-Source AI Video Clipper",
-    template: "%s | SupoClip",
+    default: "Open Klippah – Open-Source AI Video Clipper",
+    template: "%s | Open Klippah",
   },
   description:
     "Turn long videos into captioned short-form clips with open-source AI clipping, virality scoring, and face-aware vertical crops.",
   metadataBase: new URL(getSiteUrl()),
-  applicationName: "SupoClip",
-  authors: [{ name: "SupoClip Team", url: getSiteUrl() }],
-  creator: "SupoClip Team",
-  publisher: "SupoClip",
+  applicationName: "Open Klippah",
+  authors: [{ name: "Open Klippah Team", url: getSiteUrl() }],
+  creator: "Open Klippah Team",
+  publisher: "Open Klippah",
   category: "video software",
   icons: {
     icon: "/icon.png",
@@ -50,15 +50,15 @@ export const metadata: Metadata = {
     appId: APP_STORE_ID,
   },
   openGraph: {
-    title: "SupoClip – Open-Source AI Video Clipper",
+    title: "Open Klippah – Open-Source AI Video Clipper",
     description:
       "Turn long videos into captioned short-form clips with open-source AI clipping.",
-    siteName: "SupoClip",
+    siteName: "Open Klippah",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "SupoClip – Open-Source AI Video Clipper",
+    title: "Open Klippah – Open-Source AI Video Clipper",
     description:
       "Open-source AI clipping, virality scoring, captions, and face-aware vertical crops.",
   },

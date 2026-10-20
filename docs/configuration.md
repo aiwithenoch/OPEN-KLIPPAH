@@ -1,6 +1,6 @@
 # Configuration
 
-This guide explains the important environment variables used by SupoClip and how they affect behavior.
+This guide explains the important environment variables used by Open Klippah and how they affect behavior.
 
 Most settings are sourced from `.env.example`, `docker-compose.yml`, and the backend configuration code in `backend/src/config.py`.
 
@@ -55,7 +55,7 @@ The backend can infer a default LLM from whichever API key is present, but setti
 
 ## Analytics Settings
 
-SupoClip can send pageviews and custom product events to DataFast from the `frontend` app.
+Open Klippah can send pageviews and custom product events to DataFast from the `frontend` app.
 
 | Variable | Default | Purpose |
 |---|---|---|
@@ -160,7 +160,7 @@ Required when `SELF_HOST=false` and you want subscription management:
 | `AWS_REGION` | AWS region for Amazon SES, default `us-east-1` |
 | `AWS_ACCESS_KEY_ID` | AWS access key ID used to send hosted billing lifecycle emails |
 | `AWS_SECRET_ACCESS_KEY` | AWS secret access key used to send hosted billing lifecycle emails |
-| `SES_FROM_EMAIL` | Verified sender address for subscription emails, default `SupoClip <onboarding@example.com>` |
+| `SES_FROM_EMAIL` | Verified sender address for subscription emails, default `Open Klippah <onboarding@example.com>` |
 
 ### Discord feedback forwarding
 
@@ -174,7 +174,7 @@ Required when `SELF_HOST=false` and you want subscription management:
 Social publishing is optional. When no provider is configured the Publish
 button and the Social Accounts page explain what is missing instead of failing.
 
-SupoClip uses one OAuth app per platform, registered by whoever operates the
+Open Klippah uses one OAuth app per platform, registered by whoever operates the
 server. Users connect their own YouTube, TikTok and Instagram accounts through
 that app from **Settings → Social Accounts**; tokens are stored encrypted with
 `APP_SETTINGS_ENCRYPTION_KEY` (falling back to `BACKEND_AUTH_SECRET`).
@@ -228,7 +228,7 @@ Before enabling each provider for users:
 - Connect a test account, disconnect it, and reconnect it. Confirm token refresh
   works and revoked credentials prompt a reconnect.
 - Publish one clip using a visibility level allowed for the test account. Check
-  the result on the platform as well as in SupoClip.
+  the result on the platform as well as in Open Klippah.
 - Schedule a clip, confirm it publishes once, and cancel another scheduled clip.
 - For TikTok, verify asynchronous processing and private completion with no
   public post ID. Status-check failures should keep checking the existing upload;
@@ -245,13 +245,13 @@ verify platform app approval or live OAuth, uploads, and metrics.
 
 ## Apify YouTube Downloader
 
-SupoClip uses the actor explicitly configured in the private environment as the primary YouTube download path. Metadata preflight and fallback downloads rely on the local `yt-dlp` stack over a direct connection.
+Open Klippah uses the actor explicitly configured in the private environment as the primary YouTube download path. Metadata preflight and fallback downloads rely on the local `yt-dlp` stack over a direct connection.
 
 | Variable | Default | Purpose |
 |---|---|---|
 | `APIFY_API_TOKEN` | empty | Enables the primary Apify download flow |
 | `APIFY_YOUTUBE_DEFAULT_QUALITY` | `1080` | Requested Apify download resolution (`360`, `480`, `720`, or `1080`) |
-| `APIFY_RUN_TIMEOUT_SECONDS` | `900` | Maximum Apify actor run time before SupoClip gives up and falls back |
+| `APIFY_RUN_TIMEOUT_SECONDS` | `900` | Maximum Apify actor run time before Open Klippah gives up and falls back |
 
 ## YouTube Metadata Provider
 
@@ -343,7 +343,7 @@ NEXT_PUBLIC_SCALE_PLAN_TASK_LIMIT=300
 AWS_REGION=us-east-1
 AWS_ACCESS_KEY_ID=your_aws_access_key_id
 AWS_SECRET_ACCESS_KEY=your_aws_secret_access_key
-SES_FROM_EMAIL="SupoClip <onboarding@example.com>"
+SES_FROM_EMAIL="Open Klippah <onboarding@example.com>"
 ```
 
 ## Related Reading

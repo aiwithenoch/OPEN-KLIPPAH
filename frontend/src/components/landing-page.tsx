@@ -228,7 +228,7 @@ export default function LandingPage() {
           <Link href="/" className="flex items-center gap-2.5 group">
             <Image
               src="/logo.png"
-              alt="SupoClip"
+              alt="Open Klippah"
               width={24}
               height={24}
               className="rounded-lg transition-transform group-hover:scale-105"
@@ -240,7 +240,7 @@ export default function LandingPage() {
                   "var(--font-syne), var(--font-geist-sans), system-ui",
               }}
             >
-              SupoClip
+              Open Klippah
             </span>
           </Link>
 
@@ -463,7 +463,7 @@ export default function LandingPage() {
                   </a>
                 )}
                 <a
-                  href="https://github.com/FujiwaraChoki/supoclip"
+                  href="https://github.com/aiwithenoch/OPEN-KLIPPAH"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -476,7 +476,7 @@ export default function LandingPage() {
                   href={APP_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label="Download SupoClip on the App Store"
+                  aria-label="Download Open Klippah on the App Store"
                   className="flex items-center"
                 >
                   <Image
@@ -520,7 +520,7 @@ export default function LandingPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={PRODUCT_HUNT_BADGE_URL}
-                  alt="SupoClip - Open-source AI clipper: long videos into viral shorts | Product Hunt"
+                  alt="Open Klippah - Open-source AI clipper: long videos into viral shorts | Product Hunt"
                   width={250}
                   height={54}
                 />
@@ -861,12 +861,12 @@ export default function LandingPage() {
                     <span className="opacity-50">$</span>{" "}
                     git clone{" "}
                     <span className="opacity-40">
-                      https://github.com/FujiwaraChoki/supoclip
+                      https://github.com/aiwithenoch/OPEN-KLIPPAH
                     </span>
                   </div>
                   <div>
                     <span className="opacity-50">$</span>{" "}
-                    cd supoclip && cp .env.example .env
+                      cd open-klippah && cp .env.example .env
                   </div>
                   <div className="opacity-40"># add a transcription + LLM provider to .env</div>
                   <div>
@@ -877,7 +877,7 @@ export default function LandingPage() {
 
                 <div className="flex flex-wrap gap-3 mt-6">
                   <a
-                    href="https://github.com/FujiwaraChoki/supoclip"
+                    href="https://github.com/aiwithenoch/OPEN-KLIPPAH"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -925,7 +925,7 @@ export default function LandingPage() {
               Learn the complete clipping workflow
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-muted-foreground">
-              Practical, source-backed pages for choosing a video clipper, self-hosting SupoClip,
+              Practical, source-backed pages for choosing a video clipper, self-hosting Open Klippah,
               and turning long recordings into short-form content.
             </p>
           </ScrollReveal>
