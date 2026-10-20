@@ -43,7 +43,7 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
         dateModified: post.updatedAt,
         author: { "@type": "Organization", name: post.author },
         publisher: { "@type": "Organization", name: "Open Klippah", url: getSiteUrl(), logo: { "@type": "ImageObject", url: `${getSiteUrl()}/logo.png` } },
-        image: post.image ? [`${getSiteUrl()}${post.image.src}`, `${getSiteUrl()}/blog/openklippah-editor.webp`] : undefined,
+        image: post.image ? [`${getSiteUrl()}${post.image.src}`, `${getSiteUrl()}/blog/openklippah-editor.png`] : undefined,
         articleSection: post.category,
         inLanguage: "en",
         mainEntityOfPage: `${getSiteUrl()}/blog/${post.slug}`,
@@ -146,8 +146,8 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
             <figcaption className="mt-4 text-xs leading-5 text-muted-foreground">Open Klippah’s recorded-video workflow. AI suggests; you make the final editorial decision.</figcaption>
           </figure>
           <figure className="overflow-hidden rounded-2xl border">
-            <a href="/blog/openklippah-editor.webp" aria-label="View full-size Open Klippah editor screenshot"><Image src="/blog/openklippah-editor.webp" alt="Open Klippah editor with clip list, vertical preview, caption styling controls, and a timeline" width={1800} height={1109} sizes="(max-width: 768px) 100vw, 768px" className="h-auto w-full" /></a>
-            <figcaption className="bg-muted/25 px-5 py-4 text-sm leading-6 text-muted-foreground">Inside the Open Klippah editor: adjust captions, framing, and timing before export. Actual product screenshot using sample test footage; click to enlarge.</figcaption>
+            <a href="/blog/openklippah-editor.png" aria-label="View full-size Open Klippah clip projects screenshot"><Image src="/blog/openklippah-editor.png" alt="Open Klippah clip projects with source videos organized into folders and generated clips" width={1195} height={874} sizes="(max-width: 768px) 100vw, 768px" className="h-auto w-full" /></a>
+            <figcaption className="bg-muted/25 px-5 py-4 text-sm leading-6 text-muted-foreground">Open Klippah keeps generated clips grouped by source video, so each project is easy to review and revisit. Click to enlarge.</figcaption>
           </figure>
           <h2 id="control" className="scroll-mt-8">Why Open Klippah is the better open-source alternative</h2>
           <h3>1. You can shape the workflow around your content</h3>

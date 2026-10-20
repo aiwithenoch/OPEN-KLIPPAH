@@ -59,3 +59,10 @@
 - Commands: committed as `4b99cb9` with `git commit -m "Remove upstream SupoClip identifiers"`; pushed with `GIT_TERMINAL_PROMPT=0 git push --progress -u origin main`; verified with `git ls-remote --heads origin main`.
 - Result: local `HEAD` and remote `origin/main` both resolve to `4b99cb9be8c9e4009fd9309b7f979e9efca04ffe`; the worktree is clean and tracks `origin/main`.
 - Deferred: the `openklippah.com`/API/MCP hostnames remain provisional until a production domain is chosen. The historical changelog and Git ancestry retain upstream provenance for licensing/auditability; runtime and tracked working-tree branding do not.
+
+## 2026-10-20T21:06:03+00:00 — Replaced editor screenshot with supplied clip-projects image
+
+- Objective: replace the remaining old editor screenshot with the user-supplied Open Klippah clip-projects screenshot.
+- Action: removed `frontend/public/blog/openklippah-editor.webp`, added the supplied 1195×874 PNG as `frontend/public/blog/openklippah-editor.png`, and updated `frontend/src/components/supo-live-article.tsx` metadata, image references, dimensions, alt text, and caption.
+- Verification: frontend lint, typecheck, and production build passed with the bundled Node runtime. The build emitted the existing Better Auth base URL/default-secret warnings but completed successfully; `git diff --check` passed and all asset references resolve to the new PNG.
+- Current state: the image change is ready to commit and push to `origin/main`.
