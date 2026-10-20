@@ -169,7 +169,7 @@ export default async function SeoLandingPage({ params }: SeoLandingPageProps) {
               </table>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              First-party product data from the Open Klippah repository and hosted application, verified {updatedLabel}.
+              First-party product data from the Open Klippah repository and verified deployments, checked {updatedLabel}.
             </p>
           </section>
 

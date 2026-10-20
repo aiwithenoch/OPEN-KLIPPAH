@@ -2,7 +2,7 @@
 Configuration for the Open Klippah MCP server.
 
 All settings come from environment variables so the same server binary works
-against the official hosted instance (the default) or any self-hosted backend.
+against a local or deployed backend.
 """
 
 from __future__ import annotations
@@ -11,9 +11,8 @@ import os
 from dataclasses import dataclass
 from typing import Optional
 
-# The official hosted Open Klippah API. Override with OPEN_KLIPPAH_API_URL to point at
-# a self-hosted backend (e.g. http://localhost:8000).
-DEFAULT_API_URL = "https://api.openklippah.com"
+# Local Docker Compose backend. Set OPEN_KLIPPAH_API_URL for a deployed backend.
+DEFAULT_API_URL = "http://localhost:8000"
 
 
 def _clean(value: Optional[str]) -> Optional[str]:

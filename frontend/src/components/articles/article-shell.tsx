@@ -119,7 +119,7 @@ export function ArticleShell({
           ))}
           <section className="not-prose rounded-2xl border bg-muted/30 p-6 sm:p-8" aria-label="Start with Open Klippah">
             <h2 className="!pt-0 text-2xl font-bold">Try it on one recording you know well.</h2>
-            <p className="mt-2 text-muted-foreground">Use the hosted app, or run the same open-source code on your own machine.</p>
+            <p className="mt-2 text-muted-foreground">Open your deployment, or run the same open-source code on your own machine.</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link href="/sign-up" className="inline-flex items-center gap-2 rounded-lg bg-foreground px-5 py-3 text-sm font-semibold !text-background !no-underline">Start clipping<ArrowRight className="h-4 w-4" /></Link>
               <a href={GITHUB_URL} className="inline-flex items-center gap-2 rounded-lg border px-5 py-3 text-sm font-semibold !no-underline"><Github className="h-4 w-4" />Get the source</a>

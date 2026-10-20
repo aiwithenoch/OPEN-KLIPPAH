@@ -3,10 +3,10 @@
 MCP server for Open Klippah — an AI tool that turns long-form videos into short,
 vertical, subtitled viral clips.
 
-The server talks to the Open Klippah REST API. By default it targets the official
-hosted instance at ``https://api.openklippah.com``; set ``OPEN_KLIPPAH_API_URL`` to
-use a self-hosted backend. Authenticate by creating an API key in your Open Klippah
-account and exposing it as ``OPEN_KLIPPAH_API_KEY``.
+The server talks to the Open Klippah REST API. By default it targets the local
+Docker Compose backend at ``http://localhost:8000``; set ``OPEN_KLIPPAH_API_URL``
+for a deployed backend. Authenticate with ``OPEN_KLIPPAH_API_KEY`` or the
+self-hosted signed-header options.
 
 Typical workflow:
     1. ``openklippah_create_clip_task`` with a YouTube URL  -> returns a task_id

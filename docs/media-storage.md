@@ -45,8 +45,8 @@ backend/.venv/bin/python scripts/setup-media-storage.py --apply \
 ```
 
 Supply every deployed frontend origin with repeated `--origin` arguments if the
-defaults (`https://openklippah.com`, `https://www.openklippah.com`, localhost port 3107)
-do not cover the installation. Keep secrets outside Git. Copy configuration into
+default local origin (`http://localhost:3107`) does not cover the installation.
+Keep secrets outside Git. Copy configuration into
 the deployment's secret store or private environment file. Apply backend migrations
 before starting the updated worker.
 

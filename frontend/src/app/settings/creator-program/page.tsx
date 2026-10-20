@@ -14,7 +14,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Skeleton } from "@/components/ui/skeleton";
 import { Textarea } from "@/components/ui/textarea";
 import { useSession } from "@/lib/auth-client";
-import { appStoreRedeemUrl } from "@/lib/site";
 
 const APPLY_PATH = "/settings/creator-program";
 
@@ -202,11 +201,6 @@ export default function CreatorProgramPage() {
           <p className="text-sm text-muted-foreground">Share your link or code. Your account has Pro for free while you&apos;re in the program.</p>
           <CopyField label="Your link" value={`${origin}/?ref=${application.slug}`} />
           <CopyField label="Your code" value={application.slug.toUpperCase()} />
-          {application.app_store_code_added_at ? (
-            <CopyField label="Your iPhone link" value={appStoreRedeemUrl(application.slug)} />
-          ) : (
-            <p className="text-xs text-muted-foreground">Your iPhone link will show up here once your code is live on the App Store.</p>
-          )}
         </section>
       )}
 

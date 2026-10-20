@@ -200,12 +200,9 @@ table (one per user, `slug` cleared on decline).
   (`lib/creator-code.ts`).
 - **Emails** go through the backend `POST /account/affiliate-email` (SES): new
   applications to every `is_admin` user, decisions to the applicant.
-- **iOS:** creators' free Pro reaches the app through the billing summary
-  (`subscription_provider: "affiliate"`). The audience discount on iPhone is an
-  App Store offer code: custom codes on the Pro subscription's "Creator offer"
-  (20% off for 3 months), added by hand in App Store Connect; admins then mark
-  "App Store code added" and the creator page shows `appStoreRedeemUrl(code)`.
-  The app's paywall opens Apple's redeem sheet ("Have a creator code?").
+- **Discount delivery:** creators' free Pro reaches the app through the billing
+  summary (`subscription_provider: "affiliate"`). The web checkout applies the
+  Stripe promotion code for the creator's referral code.
 
 ## Environment Variables
 
@@ -276,17 +273,6 @@ Edit `backend/src/ai.py`: `simplified_system_prompt` controls selection criteria
 - Each segment gets an AI-written `hook_title` (3-9 words) burned into the top safe area for the first ~4s (`build_hook_title_ass` in `video_utils.py`), persisted on `generated_clips.hook_title`
 - Static talking-head crops get a slow ~5% Ken Burns punch-in (`kenburns_zoom_fragment`); tracked pans and split screens keep their own motion
 
-## iOS App
-
-A native iOS app ships on the App Store
-(https://apps.apple.com/us/app/openklippah/id6784760040, app id `6784760040`). Its
-source lives outside this repo. It talks to the hosted API and bills through
-RevenueCat, which is what `frontend/src/app/api/billing/revenuecat-webhook/`
-serves; App Store subscribers are blocked from Stripe checkout/portal by the
-"managed through the App Store" guard in the billing routes. The www references
-the app via `APP_STORE_ID`/`APP_STORE_URL` in `frontend/src/lib/site.ts`
-(Smart App Banner meta, JSON-LD `MobileApplication`, hero badge, footer link).
-
 ## YouTube Downloads
 
 `YOUTUBE_DOWNLOAD_PROVIDER` accepts `yt_dlp` (free default) or `apify`.
@@ -300,8 +286,8 @@ environment configuration. See `backend/README.md` for setup.
 (`openklippah-mcp`, Python/FastMCP, stdio) that exposes Open Klippah to MCP clients
 (Claude Desktop/Code, Cursor, …). It is a thin client over the REST API.
 
-- **Default target:** the hosted API `https://api.openklippah.com`. Override with
-  `OPEN_KLIPPAH_API_URL` for self-hosting (e.g. `http://localhost:8000`).
+- **Default target:** the local API `http://localhost:8000`. Set
+  `OPEN_KLIPPAH_API_URL` explicitly when using a deployed backend.
 - **Auth:** a per-user API key in `OPEN_KLIPPAH_API_KEY` (see API keys above).
   Self-hosters may instead use `OPEN_KLIPPAH_USER_ID` (+ `OPEN_KLIPPAH_AUTH_SECRET` when
   signing is enforced).

@@ -15,13 +15,13 @@ the database user is unverified. Existing keys, listing, revocation and ordinary
 sign-in continue to work. Self-hosted installations also need SES configured to
 deliver verification links; existing users are not automatically marked verified.
 
-Send it to the backend (hosted: `https://api.openklippah.com`, self-hosted: your backend URL) with either header:
+Send it to your backend URL (the local default is `http://localhost:8000`) with either header:
 
 ```bash
-curl https://api.openklippah.com/tasks/ \
+curl http://localhost:8000/tasks/ \
   -H "Authorization: Bearer sk_..."
 
-curl https://api.openklippah.com/tasks/ \
+curl http://localhost:8000/tasks/ \
   -H "x-api-key: sk_..."
 ```
 

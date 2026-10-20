@@ -50,14 +50,14 @@ export function SelfHostingGuideArticle({ post }: { post: BlogPost }) {
   return (
     <ArticleShell post={post} breadcrumb="Self-host Open Klippah" toc={toc} faqs={faqs}>
       <p>
-        Open Klippah is the open-source AI video clipper behind the hosted app at openklippah.com. The same repository
-        ships a Docker Compose stack you can run on a laptop, a home server, or a VPS. This guide follows that stack
+        Open Klippah is an open-source AI video clipper. The repository ships a Docker Compose stack you can run on a
+        laptop, a home server, or a VPS. This guide follows that stack
         exactly as it exists in the <a href={GITHUB_URL}>repository</a>. Where a step depends on your provider or
         hardware, we say so instead of guessing.
       </p>
       <p>
-        Prefer not to run infrastructure? The <Link href="/sign-up">hosted app</Link> runs the same pipeline. Still
-        deciding between tools? Read our <Link href={OPUSCLIP_COMPARISON_HREF}>Open Klippah vs OpusClip comparison</Link> first.
+        If you operate a shared deployment, use its <Link href="/sign-up">sign-up route</Link> to create an account.
+        Still deciding between tools? Read our <Link href={OPUSCLIP_COMPARISON_HREF}>Open Klippah vs OpusClip comparison</Link> first.
       </p>
 
       <h2 id="stack">What you are running</h2>

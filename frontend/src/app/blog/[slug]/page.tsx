@@ -37,7 +37,7 @@ const comparisonRows = [
   {
     icon: ShieldCheck,
     feature: "Free usage model",
-    openklippah: "Open source and self-hostable with no plan limits. Your costs are your own compute and API keys. The hosted app is paid.",
+    openklippah: "Open source and self-hostable with no plan limits. Your costs are your own compute and API keys.",
     opusClip: "Free plan exists, but exports can include an OpusClip watermark.",
   },
   {
@@ -71,13 +71,13 @@ const faqs = [
     icon: ShieldCheck,
     question: "Is Open Klippah completely free?",
     answer:
-      "The Open Klippah codebase is free and open source, and self-hosted installs have no plan limits. You still pay for your own infrastructure and any transcription or LLM provider you configure. The hosted app requires a paid plan.",
+      "The Open Klippah codebase is free and open source, and self-hosted installs have no plan limits. You still pay for your own infrastructure and any transcription or LLM provider you configure.",
   },
   {
     icon: Captions,
     question: "Does Open Klippah add a watermark?",
     answer:
-      "No. Open Klippah's rendering pipeline has no watermark step, whether you use the hosted app or a self-hosted install.",
+      "No. Open Klippah's rendering pipeline has no watermark step in a self-hosted install.",
   },
 ];
 
@@ -183,7 +183,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </Link>
             <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="hidden sm:inline-flex">
-                Hosted App
+                Open App
                 <ExternalLink className="h-3.5 w-3.5" />
               </Button>
             </a>
@@ -206,7 +206,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
                   <Badge variant="outline" className="gap-2">
                     <Play className="h-3.5 w-3.5" />
-                    Try hosted Open Klippah
+                    Try Open Klippah
                   </Badge>
                 </a>
               </div>
@@ -248,7 +248,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 ))}
               </ul>
               <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex text-sm font-semibold">
-                Open hosted version
+                Open App
                 <ExternalLink className="ml-2 h-4 w-4" />
               </a>
             </aside>
@@ -268,13 +268,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <p>
                 Open Klippah is the best free OpusClip alternative for that specific creator: someone
                 who wants AI-assisted clip discovery, vertical exports, captions, and control over
-                the underlying system. You can also
-                {" "}
-                <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
-                  use hosted Open Klippah
-                </a>
-                {" "}
-                on a paid plan if you want to skip setup entirely.
+                the underlying system. Run it yourself or deploy it on infrastructure you control.
               </p>
 
               <h2 id="quick-verdict">Quick Verdict</h2>

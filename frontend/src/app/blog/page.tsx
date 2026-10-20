@@ -44,7 +44,7 @@ export default function BlogIndexPage() {
           <div className="flex items-center gap-2">
             <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
               <Button variant="ghost" size="sm" className="hidden sm:inline-flex">
-                Hosted App
+                Open App
                 <ExternalLink className="h-3.5 w-3.5" />
               </Button>
             </a>
@@ -65,7 +65,7 @@ export default function BlogIndexPage() {
             <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
               <Badge variant="outline" className="gap-2">
                 <ExternalLink className="h-3.5 w-3.5" />
-                Try hosted Open Klippah
+                Try Open Klippah
               </Badge>
             </a>
           </div>

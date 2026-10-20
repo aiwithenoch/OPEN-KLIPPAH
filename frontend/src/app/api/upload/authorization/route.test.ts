@@ -66,7 +66,7 @@ describe("/api/upload/authorization", () => {
 
   it("returns signed direct-upload headers when backend auth is configured", async () => {
     vi.stubEnv("BACKEND_AUTH_SECRET", "secret");
-    vi.stubEnv("NEXT_PUBLIC_API_URL", "https://api.openklippah.com/");
+    vi.stubEnv("NEXT_PUBLIC_API_URL", "http://localhost:8000/");
     vi.spyOn(Date, "now").mockReturnValue(1_700_000_000_000);
     vi.mocked(auth.api.getSession).mockResolvedValue({
       user: { id: "user-1" },
@@ -77,7 +77,7 @@ describe("/api/upload/authorization", () => {
     expect(response.status).toBe(200);
     await expect(response.json()).resolves.toEqual({
       directUpload: true,
-      uploadUrl: "https://api.openklippah.com/upload",
+      uploadUrl: "http://localhost:8000/upload",
       headers: {
         "x-openklippah-user-id": "user-1",
         "x-openklippah-ts": "1700000000",
@@ -89,14 +89,14 @@ describe("/api/upload/authorization", () => {
 
   it("keeps uploads available during a frontend-first rollout", async () => {
     vi.stubEnv("BACKEND_AUTH_SECRET", "secret");
-    vi.stubEnv("NEXT_PUBLIC_API_URL", "https://api.openklippah.com");
+    vi.stubEnv("NEXT_PUBLIC_API_URL", "http://localhost:8000");
     vi.mocked(auth.api.getSession).mockResolvedValue({ user: { id: "owner" } } as never);
     vi.stubGlobal("fetch", vi.fn().mockResolvedValue(new Response(null, { status: 404 })));
     const response = await POST(new Request("http://app/api/upload/authorization", {
       method: "POST", body: JSON.stringify({ filename: "video.mp4", size: 6, contentType: "video/mp4" }),
     }));
     expect(response.status).toBe(200);
-    expect(await response.json()).toMatchObject({ directUpload: true, uploadUrl: "https://api.openklippah.com/upload" });
+    expect(await response.json()).toMatchObject({ directUpload: true, uploadUrl: "http://localhost:8000/upload" });
   });
 
 });

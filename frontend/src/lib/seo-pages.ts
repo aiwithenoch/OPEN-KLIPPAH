@@ -78,7 +78,7 @@ export const seoPages: SeoPage[] = [
         heading: "How the Open Klippah workflow works",
         paragraphs: [
           "Paste a YouTube URL or upload a source file. Open Klippah transcribes the recording, proposes clip boundaries, and presents the strongest candidates for review. Selected moments can then be rendered as vertical, captioned videos for short-form platforms.",
-          "Because Open Klippah is open source, teams can inspect the pipeline, choose supported hosted or local language models, and adapt processing to their own infrastructure. A hosted version is also available for creators who do not want to manage deployment.",
+          "Because Open Klippah is open source, teams can inspect the pipeline, choose supported hosted or local language models, and adapt processing to their own infrastructure. Teams that need a shared instance can deploy the stack on infrastructure they control.",
         ],
         links: [
           { href: "/youtube-shorts-clipper", label: "Step-by-step: turn a YouTube video into Shorts" },
@@ -167,7 +167,7 @@ export const seoPages: SeoPage[] = [
         heading: "Start with Docker, customize when needed",
         paragraphs: [
           "The quickest setup is to clone the repository, copy the environment template, add the required provider credentials, and start the stack with Docker Compose. Developers can then change the scoring logic, caption presets, interface, or deployment model as their workflow evolves.",
-          "Creators who prefer not to operate infrastructure can use the hosted Open Klippah application while keeping the open-source repository available as a migration path.",
+          "Creators who prefer a shared instance can deploy the stack on managed infrastructure while keeping the open-source repository available for customization and migration.",
         ],
         links: [
           { href: "/blog/self-host-openklippah-docker", label: "Self-host Open Klippah with Docker Compose" },

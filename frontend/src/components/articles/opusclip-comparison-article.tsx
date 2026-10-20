@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { ArticleShell, type ArticleFaq } from "@/components/articles/article-shell";
 import type { BlogPost } from "@/lib/blog-posts";
-import { getPublicBillingPlans } from "@/lib/billing-plans";
 import { SELF_HOSTING_GUIDE_HREF } from "@/lib/marketing-links";
 import { GITHUB_URL } from "@/lib/site";
 
@@ -22,12 +21,12 @@ const faqs: ArticleFaq[] = [
   {
     question: "Does Open Klippah add a watermark?",
     answer:
-      "No. Open Klippah's rendering pipeline has no watermark step, in the hosted app or a self-hosted install. OpusClip's help center says free-plan exports can include an OpusClip watermark.",
+      "No. Open Klippah's rendering pipeline has no watermark step in a self-hosted install. OpusClip's help center says free-plan exports can include an OpusClip watermark.",
   },
   {
-    question: "Does hosted Open Klippah have a free plan?",
+    question: "Is self-hosted Open Klippah free?",
     answer:
-      "No. The hosted app requires a Pro or Scale subscription to process videos. The free route is self-hosting the open-source code, where there are no plan limits; you pay only for your own infrastructure and any AI providers you configure.",
+      "The source code is free under AGPL-3.0, and self-hosted installations have no plan limits. You pay only for your own infrastructure and any AI providers you configure.",
   },
   {
     question: "Which one is faster or makes better clips?",
@@ -48,11 +47,10 @@ const toc: Array<[string, string]> = [
 ];
 
 export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
-  const [pro, scale] = getPublicBillingPlans();
   const rows: Array<[string, React.ReactNode, React.ReactNode]> = [
     [
       "How you run it",
-      <>Hosted app, iOS app, or self-hosted with <a href={source("docker-compose.yml")}>Docker Compose</a></>,
+      <>Self-hosted with <a href={source("docker-compose.yml")}>Docker Compose</a> or deployed on infrastructure you control</>,
       "Hosted service",
     ],
     [
@@ -62,7 +60,7 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
     ],
     [
       "Pricing model",
-      <>Hosted: monthly plans with a fixed number of videos. Self-hosted: no plan limits.</>,
+      <>Self-hosted: no plan limits; deployment and provider costs are operator-managed.</>,
       <>Plans with credits for processing minutes, plus a free plan (<a href={OPUS_SOURCES.plans}>help center</a>)</>,
     ],
     [
@@ -91,7 +89,7 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
     <ArticleShell post={post} breadcrumb="Open Klippah vs OpusClip" toc={toc} faqs={faqs}>
       <p>
         OpusClip helped define AI clipping: upload a long video, get short vertical clips back. Open Klippah does the same
-        job as an open-source project you can use hosted or run yourself. This comparison sticks to what each product
+        job as an open-source project you can run yourself or deploy on infrastructure you control. This comparison sticks to what each product
         documents. Open Klippah claims link to our source code. OpusClip claims link to OpusClip&apos;s own help center.
         Where a source doesn&apos;t cover something, the table says so rather than guessing.
       </p>
@@ -137,10 +135,8 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
         instead of relying on numbers copied into a blog post.
       </p>
       <p>
-        Open Klippah offers two routes. The hosted app has <strong>{pro.name}</strong> at ${pro.priceMonthly}/month for{" "}
-        {pro.generationLimit} videos and <strong>{scale.name}</strong> at ${scale.priceMonthly}/month for {scale.generationLimit} videos.
-        There is no free hosted plan; processing requires a subscription. The self-hosted route is free software with no plan
-        limits. You pay for the server and any AI APIs you configure, and the{" "}
+        Open Klippah is free software for self-hosting. There are no plan limits, but you pay for the server and any AI APIs
+        you configure, and the{" "}
         <Link href={SELF_HOSTING_GUIDE_HREF}>self-hosting guide</Link> shows a fully local setup with no per-request AI fees.
       </p>
 
@@ -155,7 +151,7 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
       <h2 id="choose-opusclip">When OpusClip is the better fit</h2>
       <ul>
         <li><strong>You don&apos;t want to operate anything.</strong> Self-hosting means managing Docker, provider keys, updates, and backups.</li>
-        <li><strong>You want to try before paying.</strong> OpusClip documents a free plan (with a possible watermark). Hosted Open Klippah has no free tier.</li>
+        <li><strong>You want to try before paying.</strong> OpusClip documents a free plan (with a possible watermark). Open Klippah lets you evaluate the source and self-hosted workflow without a product subscription.</li>
         <li><strong>You rely on features not covered here.</strong> If a specific OpusClip workflow matters to you, confirm it on opus.pro and test whether Open Klippah covers it before switching.</li>
       </ul>
 
@@ -175,7 +171,7 @@ export function OpusClipComparisonArticle({ post }: { post: BlogPost }) {
       <h2 id="sources">Sources</h2>
       <ul>
         <li>OpusClip help center: <a href={OPUS_SOURCES.plans}>Plans and credits</a> and <a href={OPUS_SOURCES.watermark}>Watermark</a>. Plans can change; confirm current details on <a href="https://www.opus.pro/">opus.pro</a>.</li>
-        <li>Open Klippah: <a href={GITHUB_URL}>public repository</a>, including <a href={source("docker-compose.yml")}>docker-compose.yml</a>, <a href={source("docs/configuration.md")}>configuration docs</a>, and <a href={source("backend/src/services/billing_service.py")}>billing rules</a>. Hosted prices are from the pricing section of openklippah.com.</li>
+        <li>Open Klippah: <a href={GITHUB_URL}>public repository</a>, including <a href={source("docker-compose.yml")}>docker-compose.yml</a>, <a href={source("docs/configuration.md")}>configuration docs</a>, and <a href={source("backend/src/services/billing_service.py")}>billing rules</a>. Deployment pricing is operator-configured and is not asserted here.</li>
       </ul>
     </ArticleShell>
   );

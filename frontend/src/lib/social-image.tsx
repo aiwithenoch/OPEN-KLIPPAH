@@ -167,13 +167,13 @@ export async function createSocialImageResponse() {
               lineHeight: 1,
             }}
           >
-            Supo
+            Open
             <span
               style={{
                 color: "#6b6b67",
               }}
             >
-              Clip
+              Klippah
             </span>
           </div>
 

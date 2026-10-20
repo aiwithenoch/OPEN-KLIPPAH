@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HOSTED_APP_URL, getSiteUrl } from "@/lib/blog-posts";
+import { getSiteUrl } from "@/lib/blog-posts";
+import { GITHUB_URL } from "@/lib/site";
 
 const LAST_UPDATED = "October 16, 2026";
-const CONTACT_EMAIL = "privacy@openklippah.com";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Open Klippah",
@@ -52,12 +51,9 @@ export default function PrivacyPolicyPage() {
               Open Klippah
             </span>
           </Link>
-          <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
-            <Button variant="ghost" size="sm" className="hidden sm:inline-flex">
-              Hosted App
-              <ExternalLink className="h-3.5 w-3.5" />
-            </Button>
-          </a>
+          <Button asChild variant="ghost" size="sm" className="hidden sm:inline-flex">
+            <a href={`${GITHUB_URL}/issues`} target="_blank" rel="noopener noreferrer">Contact via GitHub</a>
+          </Button>
         </div>
       </header>
 
@@ -132,7 +128,7 @@ export default function PrivacyPolicyPage() {
               which channels bring people who find Open Klippah useful. If analytics are enabled, the
               sign-up and clip-export events we send to our analytics provider include the same
               campaign fields. We don&apos;t use this information for advertising or sell it. You can
-              remove the record from your browser by clearing site data for openklippah.com.
+              remove the record from your browser by clearing site data for this site.
             </p>
           </Section>
 
@@ -194,7 +190,7 @@ export default function PrivacyPolicyPage() {
                 Google security settings
               </a>
               . To ask us to delete this data, email{" "}
-              <a className="text-foreground underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+              <a className="text-foreground underline" href={`${GITHUB_URL}/issues`} target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
             </p>
             <p className="font-medium text-foreground">YouTube and Google.</p>
             <p>
@@ -256,7 +252,7 @@ export default function PrivacyPolicyPage() {
               You can access and update your account information in the app. You can delete
               individual tasks and clips at any time. You can delete your account&mdash;which removes
               your associated data&mdash;from the app, or by contacting us at{" "}
-              <a className="text-foreground underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+              <a className="text-foreground underline" href={`${GITHUB_URL}/issues`} target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
             </p>
             <p>
               Depending on where you live (for example under GDPR or CCPA/CPRA), you may have rights
@@ -302,7 +298,7 @@ export default function PrivacyPolicyPage() {
           <Section title="Contact Us">
             <p>
               Questions about this policy or your data? Email us at{" "}
-              <a className="text-foreground underline" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
+              <a className="text-foreground underline" href={`${GITHUB_URL}/issues`} target="_blank" rel="noopener noreferrer">GitHub Issues</a>.
             </p>
           </Section>
         </div>

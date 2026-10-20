@@ -5,6 +5,7 @@ Run from this checkout using Python 3. No purchases, job submissions, or service
 changes. API keys are read on the production host and never returned.
 """
 import json
+import os
 import shlex
 import subprocess
 import urllib.request
@@ -50,11 +51,15 @@ asyncio.run(main())
 
 def main():
     snapshot={}
-    try:
-        with urllib.request.urlopen('https://www.openklippah.com/',timeout=20) as response:
-            snapshot['public_site_status']=response.status
-    except Exception as error:
-        snapshot['public_site_error']=type(error).__name__
+    public_url = os.environ.get('OPEN_KLIPPAH_PUBLIC_URL')
+    if public_url:
+        try:
+            with urllib.request.urlopen(public_url,timeout=20) as response:
+                snapshot['public_site_status']=response.status
+        except Exception as error:
+            snapshot['public_site_error']=type(error).__name__
+    else:
+        snapshot['public_site_check']='skipped; set OPEN_KLIPPAH_PUBLIC_URL to a verified deployment URL'
     command='docker exec openklippah-backend /app/.venv/bin/python -c '+shlex.quote(REMOTE)
     try:
         response=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','hetzner',command],

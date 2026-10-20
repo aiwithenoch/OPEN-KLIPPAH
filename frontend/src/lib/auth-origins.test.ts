@@ -13,10 +13,10 @@ describe("authentication browser origins", () => {
 
   it("preserves hosted production's origin list when no extras are configured", () => {
     expect(getAuthTrustedOrigins({
-      NEXT_PUBLIC_SELF_HOST: "false", NEXT_PUBLIC_APP_URL: "https://www.openklippah.com",
-      BETTER_AUTH_URL: "https://www.openklippah.com",
+      NEXT_PUBLIC_SELF_HOST: "false", NEXT_PUBLIC_APP_URL: "https://app.example.test",
+      BETTER_AUTH_URL: "https://app.example.test",
     })).toEqual([
-      "https://www.openklippah.com", "http://localhost:3107", "http://sp.localhost:3107", "http://openklippah.localhost:3107",
+      "https://app.example.test", "http://localhost:3107", "http://sp.localhost:3107", "http://openklippah.localhost:3107",
     ]);
   });
 

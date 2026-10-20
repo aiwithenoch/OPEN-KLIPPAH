@@ -1,29 +1,21 @@
 # Open Klippah
 
-> Open Klippah is an open-source AI video clipper that turns long videos into captioned, vertical short-form clips for YouTube Shorts, TikTok, Instagram Reels, and similar platforms.
+> Open Klippah is an open-source AI video clipper that turns long videos into
+> captioned, vertical short-form clips for YouTube Shorts, TikTok, Instagram
+> Reels, and similar platforms.
 
-Open Klippah can be used as a hosted web application, as a native iOS app, or self-hosted from its AGPL-3.0 source code. The workflow accepts YouTube URLs and uploaded video files, transcribes the source, proposes promising segments, scores candidate clips, creates face-aware vertical crops, adds word-synced captions, and exports platform-ready videos.
+## Canonical resources
 
-## Canonical website
-
-- [Open Klippah](https://www.openklippah.com/): Product overview, features, pricing, and hosted application access.
-- [GitHub repository](https://github.com/aiwithenoch/OPEN-KLIPPAH): Source code, setup instructions, architecture, license, and contribution history.
-- [Open Klippah for iOS](https://apps.apple.com/us/app/openklippah/id6784760040): Native iPhone app on the App Store, backed by the hosted service.
-
-## Product pages
-
-- [AI video clipper](https://www.openklippah.com/ai-video-clipper): AI-assisted highlight detection, virality scoring, captions, and exports.
-- [Open-source video clipper](https://www.openklippah.com/open-source-video-clipper): Self-hosting, source access, provider choice, and deployment tradeoffs.
-- [YouTube Shorts clipper](https://www.openklippah.com/youtube-shorts-clipper): Workflow for repurposing long YouTube videos into vertical Shorts.
-- [Demo](https://www.openklippah.com/demo): Real clips generated from a long-form interview, with source timestamps and pipeline steps.
-
-## Guides and comparisons
-
-- [Open Klippah Blog](https://www.openklippah.com/blog): Product comparisons and practical video-clipping workflows.
-- [Self-host Open Klippah with Docker Compose](https://www.openklippah.com/blog/self-host-openklippah-docker): Requirements, environment setup, fully local Whisper + Ollama option, and production checklist.
-- [Open Klippah vs OpusClip](https://www.openklippah.com/blog/openklippah-vs-opusclip): Sourced comparison of deployment, pricing model, watermarks, and workflow.
-- [Best free, self-hosted OpusClip alternative](https://www.openklippah.com/blog/best-free-opusclip-alternative): When self-hosting the open-source app beats a credit-based tool.
-- [Open Klippah vs supo.live](https://www.openklippah.com/blog/openklippah-vs-supo-live): Open-source control compared with a hosted live-clipping service.
+- [GitHub repository](https://github.com/aiwithenoch/OPEN-KLIPPAH): source code,
+  setup instructions, architecture, license, and contribution history.
+- [Setup guide](https://github.com/aiwithenoch/OPEN-KLIPPAH/blob/main/docs/setup.md):
+  Docker-first installation and first-run checklist.
+- [Configuration guide](https://github.com/aiwithenoch/OPEN-KLIPPAH/blob/main/docs/configuration.md):
+  providers, operating modes, and environment variables.
+- [API reference](https://github.com/aiwithenoch/OPEN-KLIPPAH/blob/main/docs/api-reference.md):
+  backend routes, API keys, admin, and billing endpoints.
+- [MCP server guide](https://github.com/aiwithenoch/OPEN-KLIPPAH/blob/main/mcp/README.md):
+  use Open Klippah from Claude, Cursor, and other MCP clients.
 
 ## Key capabilities
 
@@ -32,7 +24,7 @@ Open Klippah can be used as a hosted web application, as a native iOS app, or se
 - Face-aware 9:16 vertical reframing.
 - Word-synced animated captions and caption templates.
 - Export presets for YouTube Shorts, TikTok, and Instagram Reels.
-- Hosted web usage, an iOS app, or AGPL-3.0 self-hosting.
+- Self-hosting with Docker Compose and configurable deployment infrastructure.
 - Support for configured hosted language-model providers or Ollama.
 - Transcription via AssemblyAI (default), local Whisper, or YouTube captions.
 - REST API with per-user API keys, and an MCP server for AI clients.
@@ -41,15 +33,16 @@ Open Klippah can be used as a hosted web application, as a native iOS app, or se
 ## Important qualifications
 
 - Virality scores prioritize candidates; they do not guarantee audience performance.
-- The source code is free, but self-hosters provide their own infrastructure and any paid transcription or model-provider usage.
-- The hosted service requires a paid plan (Pro or Scale) to process videos; self-hosted installs have no plan limits.
+- The source code is free, but self-hosters provide their own infrastructure and
+  any paid transcription or model-provider usage.
 - Users should process only videos they own or have permission to repurpose.
-- Product capabilities and pricing can change; use the canonical website and repository for current details.
+- No public Open Klippah hosting, App Store listing, or Product Hunt listing is
+  assumed by this repository. Operators must publish only verified deployment
+  URLs.
 
 ## Publisher
 
 - Name: Open Klippah Team
-- Website: https://www.openklippah.com/
 - Source: https://github.com/aiwithenoch/OPEN-KLIPPAH
-- Contact: support@openklippah.com
-- Last reviewed: 2026-10-05
+- Contact: https://github.com/aiwithenoch/OPEN-KLIPPAH/issues
+- Last reviewed: 2026-10-20

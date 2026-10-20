@@ -1,13 +1,12 @@
 # Open Klippah MCP Server
 
 A [Model Context Protocol](https://modelcontextprotocol.io) server for
-[Open Klippah](https://openklippah.com) — turn long-form videos (YouTube links or
+[Open Klippah](https://github.com/aiwithenoch/OPEN-KLIPPAH) — turn long-form videos (YouTube links or
 direct URLs) into short, vertical, subtitled viral clips from any MCP client
 (Claude Desktop, Claude Code, Cursor, etc.).
 
-By default it talks to the **official hosted Open Klippah API** at
-`https://api.openklippah.com`. Point it at your own deployment by setting
-`OPEN_KLIPPAH_API_URL`.
+By default it talks to a local Open Klippah backend at `http://localhost:8000`.
+Point it at your own deployment by setting `OPEN_KLIPPAH_API_URL`.
 
 ## What it can do
 
@@ -32,8 +31,8 @@ Tools marked ✓ require an API key (or self-host credentials, see below).
 
 ## Getting an API key
 
-1. Sign in at [openklippah.com](https://openklippah.com).
-2. Go to **Settings → API Keys**.
+1. Open your local or deployed Open Klippah frontend.
+2. Go to **Settings → API Keys** (`/settings/api-keys`).
 3. Create a key and copy it (it's shown only once). It looks like `sk_…`.
 
 ## Configuration
@@ -43,7 +42,7 @@ All configuration is via environment variables:
 | Variable | Default | Description |
 |----------|---------|-------------|
 | `OPEN_KLIPPAH_API_KEY` | – | Your API key (recommended auth). |
-| `OPEN_KLIPPAH_API_URL` | `https://api.openklippah.com` | Backend base URL. Set for self-hosting. |
+| `OPEN_KLIPPAH_API_URL` | `http://localhost:8000` | Backend base URL. Set this to your deployment URL when hosted elsewhere. |
 | `OPEN_KLIPPAH_DOWNLOAD_DIR` | `./openklippah-downloads` | Where downloaded/exported clips are written. |
 | `OPEN_KLIPPAH_TIMEOUT` | `60` | HTTP timeout (seconds) for non-download requests. |
 | `OPEN_KLIPPAH_USER_ID` | – | Self-host only: authenticate by user id (see below). |
@@ -77,17 +76,18 @@ pip install -e .
 openklippah-mcp
 ```
 
-## Hosted SSE server
+## SSE server
 
-For clients that add a remote MCP URL, run the server over SSE and require a
-Open Klippah API key as the client Bearer token:
+For clients that add a remote MCP URL, run the server over SSE and require an
+Open Klippah API key as the client Bearer token. Replace the local URLs below
+with the real URLs of your deployment when exposing the server remotely:
 
 ```bash
-OPEN_KLIPPAH_API_URL=https://api.openklippah.com \
+OPEN_KLIPPAH_API_URL=http://localhost:8000 \
 OPEN_KLIPPAH_MCP_TRANSPORT=sse \
 OPEN_KLIPPAH_MCP_HOST=0.0.0.0 \
 OPEN_KLIPPAH_MCP_PORT=9100 \
-OPEN_KLIPPAH_MCP_PUBLIC_URL=https://mcp.openklippah.com \
+OPEN_KLIPPAH_MCP_PUBLIC_URL=http://localhost:9100 \
 OPEN_KLIPPAH_MCP_REQUIRE_BEARER_AUTH=true \
 openklippah-mcp
 ```
@@ -95,7 +95,7 @@ openklippah-mcp
 Then configure the MCP client with:
 
 ```text
-Server URL: https://mcp.openklippah.com/sse
+Server URL: http://localhost:9100/sse
 Transport: SSE
 Authentication: Bearer Token
 Token: sk_your_openklippah_api_key

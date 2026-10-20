@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Is Open Klippah free to self-host?",
-    answer: "Open Klippah provides free source code under AGPL-3.0. Running it still involves hardware or hosting, storage, transcription, and any paid LLM usage. Hosted Open Klippah has its own service terms and pricing.",
+    answer: "Open Klippah provides free source code under AGPL-3.0. Running it still involves hardware or hosting, storage, transcription, and any paid LLM usage. Operators set the terms and pricing for any deployment they run.",
   },
   {
     question: "Can Open Klippah replace live-stream clipping and automatic posting?",
@@ -100,8 +100,8 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
           </p>
           <h2>What is Open Klippah?</h2>
           <p>
-            Open Klippah is an open-source AI video clipping tool available through openklippah.com or as a self-hosted
-            application. It analyzes long videos, selects promising moments, and produces vertical clips with
+            Open Klippah is an open-source AI video clipping tool available as a self-hosted application or an
+            operator-managed deployment. It analyzes long videos, selects promising moments, and produces vertical clips with
             face-centered cropping and word-synced subtitles. Hook titles, clip scoring, and optional B-roll
             help turn a raw recording into material ready for your final review.
             The <a href={repository}>Open Klippah repository</a> documents the features and setup.
@@ -195,8 +195,8 @@ export function SupoLiveArticle({ post }: { post: BlogPost }) {
             infrastructure, but it is not a promise that every workload costs less.
           </p>
           <p>
-            The hosted Open Klippah service is a separate option with its own pricing and terms. Choose it when you
-            want to start with less setup; choose self-hosting when control over the deployment is the priority.
+            A shared deployment can reduce setup for a team, but its pricing and terms are set by the operator. Choose
+            self-hosting when control over the deployment is the priority.
           </p>
           <h2>Which should you choose?</h2>
           <p>

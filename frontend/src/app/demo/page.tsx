@@ -154,8 +154,7 @@ export default function DemoPage() {
             ))}
           </ol>
           <p className="mt-6 text-sm leading-7 text-muted-foreground">
-            Captions are timed word by word, and the active word is highlighted. The same pipeline runs in the hosted app
-            and in a <Link href={SELF_HOSTING_GUIDE_HREF} className="font-medium text-foreground underline underline-offset-4">self-hosted install</Link>;
+            Captions are timed word by word, and the same pipeline runs in a <Link href={SELF_HOSTING_GUIDE_HREF} className="font-medium text-foreground underline underline-offset-4">self-hosted install</Link>;
             the <Link href="/ai-video-clipper" className="font-medium text-foreground underline underline-offset-4">AI video clipper guide</Link> covers each stage.
           </p>
         </section>

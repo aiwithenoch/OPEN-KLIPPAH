@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { HomeRouter } from "@/components/home-router";
-import { APP_STORE_URL, getSiteUrl } from "@/lib/site";
+import { getSiteUrl } from "@/lib/site";
 
 const siteUrl = getSiteUrl();
 
@@ -44,7 +44,7 @@ const structuredData = [
     name: "Open Klippah",
     url: siteUrl,
     logo: `${siteUrl}/logo.png`,
-    sameAs: ["https://github.com/aiwithenoch/OPEN-KLIPPAH", APP_STORE_URL],
+    sameAs: ["https://github.com/aiwithenoch/OPEN-KLIPPAH"],
   },
   {
     "@context": "https://schema.org",
@@ -67,22 +67,6 @@ const structuredData = [
       price: "0",
       priceCurrency: "USD",
       category: "Self-hosted open-source edition",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    name: "Open Klippah",
-    applicationCategory: "MultimediaApplication",
-    operatingSystem: "iOS",
-    url: APP_STORE_URL,
-    installUrl: APP_STORE_URL,
-    description:
-      "The Open Klippah iOS app: clip long videos into captioned vertical shorts from your iPhone.",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
     },
   },
   {

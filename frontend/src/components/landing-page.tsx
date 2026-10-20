@@ -42,7 +42,7 @@ import {
   type MarketingLink,
 } from "@/lib/marketing-links";
 import { DEMO_CLIPS, DEMO_SOURCE } from "@/lib/demo";
-import { APP_STORE_URL, GITHUB_URL, HOSTED_APP_URL, PRODUCT_HUNT_BADGE_URL, PRODUCT_HUNT_URL } from "@/lib/site";
+import { GITHUB_URL, HOSTED_APP_URL } from "@/lib/site";
 
 function ScrollReveal({
   children,
@@ -299,7 +299,7 @@ export default function LandingPage() {
             ) : (
               <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
                 <Button size="sm">
-                  Open Hosted App
+                  Open App
                   <ExternalLink className="w-3.5 h-3.5" />
                 </Button>
               </a>
@@ -380,7 +380,7 @@ export default function LandingPage() {
                 ) : (
                   <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
                     <Button size="sm" className="w-full">
-                      Open Hosted App
+                      Open App
                       <ExternalLink className="w-3.5 h-3.5" />
                     </Button>
                   </a>
@@ -457,7 +457,7 @@ export default function LandingPage() {
                 ) : (
                   <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
                     <Button size="lg" className="px-8 h-12 text-sm">
-                      Use Hosted App
+                      Open App
                       <ExternalLink className="w-4 h-4" />
                     </Button>
                   </a>
@@ -471,21 +471,6 @@ export default function LandingPage() {
                     <Github className="w-4 h-4" />
                     View Source
                   </Button>
-                </a>
-                <a
-                  href={APP_STORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Download Open Klippah on the App Store"
-                  className="flex items-center"
-                >
-                  <Image
-                    src="/app-store-badge.svg"
-                    alt="Download on the App Store"
-                    width={135}
-                    height={40}
-                    className="h-12 w-auto"
-                  />
                 </a>
               </div>
 
@@ -507,24 +492,6 @@ export default function LandingPage() {
                 ))}
               </div>
 
-              <a
-                href={PRODUCT_HUNT_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-8 inline-block"
-                style={{
-                  animation: "landing-fade-in-up 0.6s ease-out 0.5s both",
-                }}
-              >
-                {/* PH's dark badge sits with the App Store badge; its light one is brand orange. */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={PRODUCT_HUNT_BADGE_URL}
-                  alt="Open Klippah - Open-source AI clipper: long videos into viral shorts | Product Hunt"
-                  width={250}
-                  height={54}
-                />
-              </a>
             </div>
 
             {/* Right: Visual */}
@@ -802,7 +769,7 @@ export default function LandingPage() {
                           variant={plan.highlighted ? "secondary" : "default"}
                           size="lg"
                         >
-                          Use Hosted App
+                          Open App
                           <ExternalLink className="w-4 h-4" />
                         </Button>
                       </a>
@@ -893,14 +860,14 @@ export default function LandingPage() {
                   {authEnabled ? (
                     <Link href="/sign-up">
                       <Button variant="outline">
-                        Try the hosted version
+                        Try the app
                         <ArrowRight className="w-4 h-4" />
                       </Button>
                     </Link>
                   ) : (
                     <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
                       <Button variant="outline">
-                        Open hosted version
+                        Open the app
                         <ExternalLink className="w-4 h-4" />
                       </Button>
                     </a>
@@ -963,7 +930,7 @@ export default function LandingPage() {
             Ready to clip?
           </h2>
           <p className="text-base text-muted-foreground mb-8">
-            Turn your next video into scroll-stopping shorts. Use the hosted app,
+            Turn your next video into scroll-stopping shorts. Open your deployment,
             or self-host the open-source version for free.
           </p>
           {authEnabled ? (
@@ -976,7 +943,7 @@ export default function LandingPage() {
           ) : (
             <a href={HOSTED_APP_URL} target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="px-10 h-12 text-sm">
-                Open Hosted App
+                Open App
                 <ExternalLink className="w-4 h-4" />
               </Button>
             </a>

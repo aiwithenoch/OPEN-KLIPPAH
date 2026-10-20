@@ -13,25 +13,23 @@ activated users (people who export a clip), not just visits.
 
 ## Pages to link
 
-| Page | URL | Use it for |
+| Page | Repository path or verified destination | Use it for |
 |------|-----|------------|
-| Home | `https://www.openklippah.com/` | Product Hunt, general announcements |
-| Demo | `https://www.openklippah.com/demo` | Social posts: real output, with timestamps back to the source |
-| Self-hosting guide | `https://www.openklippah.com/blog/self-host-openklippah-docker` | r/selfhosted, developer communities |
-| Open Klippah vs OpusClip | `https://www.openklippah.com/blog/openklippah-vs-opusclip` | "OpusClip alternative" threads and questions |
-| Open-source clipper | `https://www.openklippah.com/open-source-video-clipper` | Open-source communities |
+| Home | `README.md` | General announcements and repository visitors |
+| Setup guide | `docs/setup.md` | r/selfhosted, developer communities |
+| API reference | `docs/api-reference.md` | Developer audiences and integrations |
 | GitHub | `https://github.com/aiwithenoch/OPEN-KLIPPAH` | Hacker News, developer audiences |
 
 **Visual assets in the repo**
 
 - `assets/banner.jpg`: README cover / social header
-- `frontend/public/blog/openklippah-editor.webp`: real editor screenshot (sample test footage)
+- `frontend/public/blog/openklippah-editor.png`: real editor screenshot (sample test footage)
 - `frontend/public/blog/openklippah-open-source-clipping.webp`: illustration (AI-generated, label it as such)
 - `frontend/public/clips/demo-{1,2}.mp4` + `.jpg`: demo clip previews
 
 > **Rights note:** the demo clips come from a third-party interview
 > ([source](https://www.youtube.com/watch?v=Vv3CEAS_w34)). They're shown on
-> openklippah.com with attribution and links to the source. **Don't upload them as
+> the local application with attribution and links to the source. **Don't upload them as
 > native posts to TikTok, Reels, Shorts, or X.** For native video, record the
 > demo below using footage we own.
 
@@ -42,7 +40,7 @@ Use these claims freely. Each one is backed by the code or the site:
 | Claim | Source |
 |-------|--------|
 | Open source under AGPL-3.0 | `LICENSE` |
-| Runs hosted, on iOS, or self-hosted with Docker Compose | `docker-compose.yml`, App Store listing |
+| Runs self-hosted with Docker Compose | `docker-compose.yml` |
 | Self-hosted installs have no plan limits | `billing_service.py` (`self_host` plan) |
 | No watermark on exports | No watermark step anywhere in `backend/src` |
 | Bring your own AI: OpenAI, Google, Anthropic, OpenRouter, or local Ollama | `docs/configuration.md` |
@@ -50,14 +48,13 @@ Use these claims freely. Each one is backed by the code or the site:
 | Face-aware 9:16 reframing, word-synced captions, hook titles | `backend/src/media/` |
 | Export presets for TikTok, Reels, and Shorts | `backend/src/clip_editor.py` |
 | REST API with per-user keys, plus an MCP server | `docs/api-reference.md`, `mcp/README.md` |
-| Hosted plans: Pro $10/mo (50 videos), Scale $50/mo (300 videos) | Pricing section on openklippah.com |
 
 **Don't say:**
 
-- "Free" without qualification. Hosted Open Klippah has **no free plan**. Say "free to self-host."
+- "Free" without qualification. Self-hosters provide their own infrastructure and provider costs.
 - Any speed, accuracy, or quality number ("10x faster", "95% accurate", "better clips than OpusClip"). We haven't run a benchmark that supports one.
 - That virality scores predict views. They rank candidates for review.
-- OpusClip prices or credit amounts. They change; link to the [comparison](https://www.openklippah.com/blog/openklippah-vs-opusclip) instead.
+- OpusClip prices or credit amounts. They change; verify current source material before publishing a comparison.
 - "Fully offline." Downloading YouTube links needs internet access, and optional B-roll uses Pexels.
 
 ## Campaign links
@@ -78,20 +75,11 @@ values on capture anyway, so `Reddit` and `reddit` are counted together.
 | `utm_content` | Specific placement | `r_selfhosted`, `thread_1`, `readme_badge`, … |
 | `ref` | Partner/creator code | e.g. `ref=creatorname` |
 
-**Ready-made links**
+**Publication rule**
 
-```text
-Product Hunt   https://www.openklippah.com/?utm_source=producthunt&utm_medium=launch&utm_campaign=launch_2026_10
-r/selfhosted   https://www.openklippah.com/blog/self-host-openklippah-docker?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=r_selfhosted
-r/opensource   https://www.openklippah.com/open-source-video-clipper?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=r_opensource
-X thread       https://www.openklippah.com/demo?utm_source=x&utm_medium=social&utm_campaign=launch_2026_10&utm_content=thread_1
-LinkedIn       https://www.openklippah.com/demo?utm_source=linkedin&utm_medium=social&utm_campaign=launch_2026_10
-Newsletter     https://www.openklippah.com/?utm_source=newsletter&utm_medium=email&utm_campaign=launch_2026_10
-YouTube desc.  https://www.openklippah.com/demo?utm_source=youtube&utm_medium=video&utm_campaign=launch_2026_10
-OpusClip Q&A   https://www.openklippah.com/blog/openklippah-vs-opusclip?utm_source=reddit&utm_medium=community&utm_campaign=launch_2026_10&utm_content=opusclip_thread
-```
-
-Hacker News: link the GitHub repo or `https://www.openklippah.com/` **without** tags.
+Do not copy campaign URLs from this file. After a deployment passes its smoke
+test, set the UTM base to that verified origin and check every route before
+publishing. Until then, link to the [GitHub repository](https://github.com/aiwithenoch/OPEN-KLIPPAH).
 
 ## Channel copy
 
@@ -112,19 +100,10 @@ posting, and reply to comments for the first few hours.
 > REST API and an MCP server, so agents can create and download clips.
 >
 > Stack: Next.js, FastAPI, ARQ workers on Redis, Postgres, FFmpeg.
-> There's a paid hosted version for people who don't want to run it.
 >
 > Repo: https://github.com/aiwithenoch/OPEN-KLIPPAH
-> Demo: https://www.openklippah.com/demo
 >
 > I'd love feedback on clip selection quality and the self-hosting experience.
-
-### Product Hunt
-
-- **Tagline (≤60 chars):** `Open-source AI clipper: long videos into captioned Shorts`
-- **Description (≤260 chars):** `Open Klippah finds the best moments in long videos and turns them into vertical, captioned clips for Shorts, Reels, and TikTok. Use the hosted app or self-host it for free with your own AI models, including fully local Whisper + Ollama.`
-- **First comment:** why it's open source, what self-hosting unlocks, the hosted plans, and one specific question for feedback.
-- **Gallery:** the demo video (below), the editor screenshot, the banner.
 
 ### r/selfhosted
 
@@ -138,17 +117,17 @@ posting, and reply to comments for the first few hours.
 > - No plan limits or watermark when self-hosted
 > - Ports bind to 127.0.0.1 by default; `DISABLE_SIGN_UP=true` locks it to your account
 >
-> The setup guide, including a production checklist, is here: [link with r_selfhosted tags]
+> The setup guide, including a production checklist, is here: [docs/setup.md](../docs/setup.md)
 > Known rough edges: CPU-only Whisper is slow on long videos, and Apple Silicon
 > runs the backend under amd64 emulation.
 
 ### X thread
 
-1. We open-sourced our AI video clipper. Paste a long video, get vertical, captioned clips with hook titles. Self-host it free, or use the hosted app. 🧵
-2. Here's real output from a long-form interview, with links back to each source timestamp: [demo link]
+1. We open-sourced our AI video clipper. Paste a long video, get vertical, captioned clips with hook titles. 🧵
+2. Attach a verified demo from your own deployment, with links back to each source timestamp.
 3. Bring your own AI: OpenAI, Google, Anthropic, OpenRouter, or fully local Whisper + Ollama.
 4. No watermark. No plan limits when self-hosted. AGPL-3.0: [GitHub link]
-5. Comparing tools? Our Open Klippah vs OpusClip comparison links a source for every claim: [comparison link]
+5. Comparing tools? Link only to sources you have verified immediately before publishing.
 
 Attach the demo video (own footage) to tweet 1, not the third-party demo clips.
 
@@ -159,15 +138,14 @@ Attach the demo video (own footage) to tweet 1, not the third-party demo clips.
 > captions, so one recording becomes a week of posts.
 >
 > It's open source, so teams with data requirements can run it on their own
-> infrastructure with their own AI models. There's also a hosted version.
+> infrastructure with their own AI models.
 >
-> See real output: [demo link]
+> See real output from a verified deployment or attach a local demo.
 
 ### Newsletter blurb
 
 > **Open Klippah is open source.** Turn long videos into captioned Shorts, Reels,
-> and TikToks. Use the hosted app, or self-host it free with your own AI models.
-> [See the demo →]
+> and TikToks. Self-host it with your own infrastructure and AI models.
 
 ## Demo video script
 
@@ -183,8 +161,8 @@ podcast episode with written permission).
 | 20–35s | Clip wall sorted by score; open one; show the score breakdown | "Each clip is scored on hook, engagement, value, and shareability, so you know what to review first." |
 | 35–50s | Editor: trim, change caption style, preview | "Adjust timing and captions before exporting." |
 | 50–60s | Export with the TikTok preset; download completes | "Export for TikTok, Reels, or Shorts. No watermark." |
-| 60–70s | Terminal: `docker compose up -d --build`, then GitHub repo | "It's open source. Run it yourself, or use the hosted app." |
-| End card | Logo + `openklippah.com/demo` | |
+| 60–70s | Terminal: `docker compose up -d --build`, then GitHub repo | "It's open source. Run it yourself or deploy it on infrastructure you control." |
+| End card | Logo + the verified deployment demo route | |
 
 Don't show a processing time unless it's the real, unedited duration, and say
 which hardware or plan produced it.
