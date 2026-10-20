@@ -66,3 +66,9 @@
 - Action: removed `frontend/public/blog/openklippah-editor.webp`, added the supplied 1195×874 PNG as `frontend/public/blog/openklippah-editor.png`, and updated `frontend/src/components/supo-live-article.tsx` metadata, image references, dimensions, alt text, and caption.
 - Verification: frontend lint, typecheck, and production build passed with the bundled Node runtime. The build emitted the existing Better Auth base URL/default-secret warnings but completed successfully; `git diff --check` passed and all asset references resolve to the new PNG.
 - Current state: the image change is ready to commit and push to `origin/main`.
+
+## 2026-10-20T21:06:33+00:00 — Published supplied clip-projects image
+
+- Objective: publish the supplied screenshot replacement to the requested Open Klippah repository.
+- Commands: committed as `ca1874e` with `git commit -m "Replace editor screenshot with clip projects image"`; pushed with `GIT_TERMINAL_PROMPT=0 git push`; verified the remote branch with `git ls-remote --heads origin main`.
+- Result: local `HEAD` and remote `origin/main` both resolve to `ca1874eb1ad2b170569e59e418105ef355f12cc1`; the worktree is clean and tracks `origin/main`.
